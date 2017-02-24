@@ -2088,64 +2088,38 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
                 </div>
             <h2 id="lms_setting-emails" >Emails</h2>
                           <p class="lead">
-                          Configure email template for Emails and set the email options such as email id and from name,email activation , email schedule on unit drip feed and course expiry and generate the email template.
-                          Recommended plugin for emails <srtong>https://wordpress.org/plugins/wpmandrill/</srtong>
+                          All the email templates are now migrated to buddypress email template. Here you can set the from and email address from which the email will be sent. Also you can edit the email template from the buddypress emails whose link is provided here.
                           </p>
                             <h3 id="lms_setting-emails_options">Emails Options</h3>
-                            <p>
-                              Set "From" name, "From" email and charset from which the email is to be sent.
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e1.png" title=""><img src="images/e1.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-                            <h3 id="lms_setting-emails_activation">Account Activation Email</h3>
-                            <p>
-                              Set Subject and Message that is to be sent in email when the user registers on wplms site.
-                              Use the shortcode :<strong> {{activationlink}} to add the activation link in the email.</strong>
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e2.png" title=""><img src="images/e2.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
+                            <ul>
+                              <li>Set "From" name, this is the name from which the email will be sent.</li>
+                              <li> Set "From" email, from which the email is to be sent.</li>
+                              <li>You can edit the contact Form Email.</li>
+                              <li>You can edit the activation Email.</li>
+                              <li>You can edit the forgot password Email.</li>
+                            </ul>
 
-                           <h3 id="lms_setting-emails_forgotpassword">Forgot password Email</h3>
-                            <p>
-                              Set Subject and Message that is to be sent in email when the user forgots the password.
-                              
-                            </p>
                           
 
                              <h3 id="lms_setting-emails_schedule">Email Schedule</h3>
+                             <ul>
+                              <li>
+                                Set the Drip feed email when the unit or section will be available.
+                                Enable/disable the drip feed email,schedule the email time i.e schedule the time when the unit or section will be available for example:before 12 hours of availablity,set the subject and messgae that is to be sent in email.
+                              </li>
+                              <li>
+                                Set the course expiry email.
+                                Enable/disable the course expiry email,schedule the email time i.e schedule the email time when the course will be expired for example:before 12 hours of expiry,set the subject and messgae that is to be sent in email.
+                              </li>
+                              <li>
+                                Set the inactivity email.
+                                Enable/disable the user inactivity email,schedule the email time i.e schedule the email time when the user is inactive on the website, for example:you set the inactivity email time to 30, this means the users who are inactive for more than 30 days will be sent the email. <a href="https://vibethemes.com/documentation/wplms/knowledge-base/schedule-email-for-inactive-users/">Tutorial</a>
+                              </li>
+                            </ul>
+                            <h3 id="lms_setting-emails_template">Scheduled Email.</h3>
                             <p>
-                              Set the Drip feed email when the unit or section will be available.
-                              Enable/disable the drip feed email,schedule the email time i.e schedule the time when the unit or section will be available for example:before 12 hours of availablity,set the subject and messgae that is to be sent in email.
-                              Use this shortcode :<strong>{{unit}} for Unit name, {{course}} for Course name & link, {{user}} for User name</strong>
+                              You can check which emails are scheduled in your website to be sent.
                             </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e3.png" title=""><img src="images/e3.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-
-                            <p>
-                              Set the course expiry email.
-                              Enable/disable the course expiry email,schedule the email time i.e schedule the email time when the course will be expired for example:before 12 hours of expiry,set the subject and messgae that is to be sent in email.
-                              Use this shortcode :<strong>{{course}} for Course name & link, {{user}} for User name</strong>
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e4.png" title=""><img src="images/e4.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-                            <h3 id="lms_setting-emails_template">Email Template</h3>
-                            <p>
-                              Now you can make your custom template that is to be sent in emails.
-                              Set the different colors for different area and generate a beautiful template.
-                              You can also view the code of generated template by click on "view generated template" button.Apply the colors and click on "Apply changes".
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e5.png" title=""><img src="images/e5.png" alt="wplms-settings" width="60" height="37"></a><a href="images/e6.png" title=""><img src="images/e6.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
               <h2 id="lms_setting-email-video">Watch This Video For Touch Points Emails, Messages, Notifications</h2>
               <iframe width="849" height="480" src="https://www.youtube.com/embed/mmt81gWbDDE" frameborder="0" allowfullscreen></iframe>
 <!--end of Lms Settings-->
