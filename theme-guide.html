@@ -1740,8 +1740,9 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
     <br/>
      Functions that are given in general settings are:
     </p>
+    <h4><strong>User Login & Registration Settings</strong></h4>
     <ul>
-      <li><strong>Student Login redirect</strong>: a dropdown containing pages
+      <li><strong>Student Login redirect</strong>: A dropdown containing pages:
         <ul>
           <li>Home page</li>
           <li>Profile</li>
@@ -1749,13 +1750,13 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
           <li>Dashboard</li>
           <li>same page</li>
         </ul>
-        <p>by default student redirection is set to home page but by choosing one from the dropdown you can redirect student to a different page as he log-in.</p>
+        <p>By default student redirection is set to home page but by choosing one from the dropdown you can redirect student to a different page as he log-in.</p>
         <h4>Screenshot Walkthrough</h4>
         <div class="bs-callout bs-callout-info">
           <div class="gallery normal"><a href="images/g1.png" title=""><img src="images/g1.png" alt="wplms-settings" width="60" height="37"></a></div>
         </div>
       </li>
-      <li><strong>instructor Login redirect</strong>: a dropdown containing pages
+      <li><strong>Instructor Login redirect</strong>: A dropdown containing pages:
         <ul>
           <li>Home page</li>
           <li>Profile</li>
@@ -1764,78 +1765,184 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
           <li>Dashboard</li>
           <li>same page</li>
         </ul>
-        <p>by default instructor redirection is set to home page but by choosing one from the dropdown you can redirect instructor to a different page as he log-in.</p>
+        <p>By default instructor redirection is set to home page but by choosing one from the dropdown you can redirect instructor to a different page as he log-in.</p>
         <h4>Screenshot Walkthrough</h4>
         <div class="bs-callout bs-callout-info">
           <div class="gallery normal"><a href="images/g2.jpg" title=""><img src="images/g2.jpg" alt="wplms-settings" width="60" height="37"></a></div>
         </div>
       </li>
-      <li><strong>Disable ajax in course unit load</strong>: Whenever you click on unit in course timeline by default,it loads using ajax, so disabling ajax loads unit by refreshing the page. This option(disabling ajax) can be used if you wish to use third party plugins like Visual composer,layer slider (not compatible with ajax) in unit pages.</li>
-      <li><strong>Hide Members section in Single Course page</strong>:if u checked the checkbox then it  will hide members section  from course pages.
-      </li>
-      <li><strong>Show curriculum below Course description</strong>:if u checked the checkbox then it  will show curriculum below the course description.
-      </li>
-      <li><strong>Course Timeline Accordion style</strong>:if u checked the checkbox then it  will show curriculum Accordion style.
-      </li>
-      <li><strong>Show User progress in Course Admin</strong>:if u checked the checkbox then it  will show Small Progress Bar is displayed for every user below her name in COURSE->ADMIN SECTION.
-      </li>
-      <li><strong>Enable Unit/Quiz Start Date time</strong>:if u checked the checkbox then it  will start Units and quizzes start at a particulat date and time.
-      </li>
-      <li><strong>Enable One session per user</strong>:if u checked the checkbox then it  will allow a
-       user can login from one unique user_id(EXCLUDES ADMINISTRATORS).
-      </li>
-      <li><strong>Enable In-Course Quiz</strong>:if u checked the checkbox then quizzes open inside course like units.
-      </li>
-      <li><strong>In-Course Quiz questions per page</strong>:it set number of questions appearing per page in in-course quizzes.
-      </li>
-      <li><strong>Hide Administrators in Instructors</strong>:if u checked the checkbox then it will hide administrator in all instructors page and elsewhere.
-      </li>
-      <li><strong>Enable message to Instructor in Course Page</strong>:if u checked the checkbox then it will enables a message icon to send message to instructor
-      </li>
-      <li><strong>Enable Course Codes</strong>:if u checked the checkbox then student can purchase/access courses by using custom defined codes for courses in course pricing section.
-      </li>
-        <li><strong>Unit comments/Notes</strong>:Enable unit comments only where comments is enabled for units. You can enable/disable notes/discussion features for particular units by editing the units in wp-admin panel and disabling comments in discussion metabox.</li>
-      <li><strong>Coming soon courses</strong>:if u checked the checkbox  then it enables the coming soon
-      options for courses.
-      </li>
-      <li><strong>Enable Unit Time as Drip Duration</strong>:For courses under drip feed you can dynamically adjust the drip duration(time span between two consecutive units) from unit duration.</li>
-      <li><strong>Enable Section Drip feed</strong>:if u checked the checkbox  then drip feed is applies section wise instead of unit wise.
-      </li>
-      <li><strong>Enable passing score for Quiz</strong>:if u checked the checkbox  then student progress to next.
-      </li>
-      <li><strong>Hide correct answers</strong>:if u checked the checkbox  then correct answers in quizzes are not displayed unless student has finished/submitted the course.
-      </li>
-      <li><strong>Enable negative marking</strong>:if u checked the checkbox  then it enables negative marking for questions in quizzes.
-      </li>
-      <li><strong>Show WooCommerce/Pmpro account in profile</strong>:if u checked the checkbox  then it display woocommerce account in profile.
-      </li>
-      <li><strong>Enable Front end course deletion</strong>:if u checked the checkbox  then instructors will be able to delete course and related content from front end.
-      </li>
-      <li><strong>Disable Auto allocation of Free courses</strong>:if u checked the checkbox  then it disables auto allocation of free courses.
-      </li>
-      <li><strong>Show Assignments in Course Curriculum</strong>:if u checked the checkbox  then  assignments will be displayed in course curriculum.
-      </li>
-      <li><strong>Enable Student menus</strong>:if u checked the checkbox  then it adds new menu locations for students.
-      </li>
-      <li><strong>Enable Instructor menus</strong>:if u checked the checkbox  then it adds new menu locations for instructors.
-      </li>
-      <li><strong>Enable Course forum privacy</strong>:if u checked the checkbox  then it only course students can access course forums.
-      </li>
-      <li><strong>Display Submission time in Course/Quiz/Assignment submissions</strong>:</li>
-      <li><strong>Set a terms and conditions page for BuddyPress registration</strong>:</li>
-      <li><strong>Default order in course directory</strong>: a dropdown containing order
+
+      <li><strong>Enable One session per user</strong>: If u checked the checkbox then it  will allow a
+       user can login from one unique user_id(EXCLUDES ADMINISTRATORS).</li>
+
+      <li><strong>Hide Administrators in Instructors</strong>: If u checked the checkbox then it will hide administrator in all instructors page and elsewhere.</li>
+
+      <li><strong>Enable message to Instructor in Course Page</strong>: If u checked the checkbox then it will enables a message icon to send message to instructor. <a href="http://vibethemes.com/documentation/wplms/knowledge-base/show-contact-instructor-in-course/">Tutorial</a></li>
+
+      <li><strong>Enable Create course button in instructor profile menu</strong>: If u checked the checkbox then it will add a create course button in the instructor profile menu.</li>
+
+      <li><strong>Show WooCommerce/Pmpro account in profile</strong>: If u checked the checkbox  then it display woocommerce account in profile.</li>
+
+      <li><strong>Set a terms and conditions page for BuddyPress registration</strong>: You can select any page from your website which should be the terms and conditions page in the buddypress registration page.</li>
+
+      <li><strong>Enable Student menus</strong>: If u checked the checkbox then it adds new menu locations for students.</li>
+
+      <li><strong>Enable Instructor menus</strong>: If u checked the checkbox then it adds new menu locations for instructors.</li>
+
+      <li><strong>Assign Free courses to students on account activation</strong>: If u checked the checkbox then it enables auto-subscription to all the "free" courses in site to students when they signup/register and activate their account.</li>
+    </ul>
+
+    <h4><strong>Course Home Settings</strong></h4>
+    <ul>
+      <li><strong>Course Members Visibility</strong>: A dropdown containing options:
+        <ul>
+          <li>Everyone</li>
+          <li>Logged in Users</li>
+          <li>Course Users</li>
+          <li>Instructor and Admins</li>
+        </ul>
+        <p>By default course members visibility is set to everyone. But you can choose who should see the course members, the logged in users or course users or just the instructors and the admin of the website.</p>
+
+      <li><strong>Course Curriculum Visibility</strong>: A dropdown containing options:
+        <ul>
+          <li>Everyone</li>
+          <li>Logged in Users</li>
+          <li>Course Users</li>
+          <li>Instructor and Admins</li>
+        </ul>
+        <p>By default course curriculum visibility is set to everyone. But you can choose who should see the course curriculum, the logged in users or course users or just the instructors and the admin of the website.</p>
+
+      <li><strong>Course Events Visibility</strong>: A dropdown containing options:
+        <ul>
+          <li>Everyone</li>
+          <li>Logged in Users</li>
+          <li>Course Users</li>
+          <li>Instructor and Admins</li>
+        </ul>
+        <p>By default course events visibility is set to everyone. But you can choose who should see the course events, the logged in users or course users or just the instructors and the admin of the website.</p>
+
+      <li><strong>Course Activity Visibility</strong>: A dropdown containing options:
+        <ul>
+          <li>Everyone</li>
+          <li>Logged in Users</li>
+          <li>Course Users</li>
+          <li>Instructor and Admins</li>
+        </ul>
+        <p>By default course activity visibility is set to everyone. But you can choose who should see the course activity, the logged in users or course users or just the instructors and the admin of the website.</p>
+
+      <li><strong>Course Drive Visibility</strong>: A dropdown containing options:
+        <ul>
+          <li>Everyone</li>
+          <li>Logged in Users</li>
+          <li>Course Users</li>
+          <li>Instructor and Admins</li>
+        </ul>
+        <p>By default course drive visibility is set to everyone. But you can choose who should see the course drive, the logged in users or course users or just the instructors and the admin of the website.</p>
+
+      <li><strong>Disable Instructor display in Courses</strong>: This disables the instructor display on the website, its suitable for a website with just one instructor, as you do not want to show his/her name on the website everywhere.</li>
+
+      <li><strong>Change Pre-Required Course Condition from submitted to Evaluated</strong>: After enabling this students will have to wait for course evaluation by the instructor to move on to courses which have pre-requisite course under evaluation. By default the students will be able to get access of the course when they mark the pre-requisite course as finish.</li>
+
+      <li><strong>Hide Members section in Single Course page</strong>: If u checked the checkbox then it  will hide members section  from course pages.</li>
+
+      <li><strong>Show curriculum below Course description</strong>: If u checked the checkbox then it  will show curriculum below the course description.</li>
+
+      <li><strong>Disable Course Certificate image mode</strong>: If u checked the checkbox then it  will disable the image mode in the certificate. <a href="http://vibethemes.com/documentation/wplms/knowledge-base/disable-certificate-image-mode/">Tutorial</a></li>
+
+      <li><strong>Free units should only be accessible to logged in members</strong>: If u checked the checkbox then the non logged in users cannot access any free units in the course curriculum.</li>
+
+      <li><strong>Remove Finished Courses from directory</strong>: If u checked the checkbox then it will automatically remove finished courses from course directory for user.</li>
+
+      <li><strong>Fix Course Menu on Scroll</strong>: If u checked the checkbox then the course menu will be fixed even if you scroll the page. Its suitable if you have very long course descriptions. It developed for only c2, c3 and c5 layout</li>
+    </ul>
+
+    <h4><strong>Course Status Settings</strong></h4>
+    <ul>
+      <li><strong>Course Timeline Accordion style</strong>: If u checked the checkbox then it  will show curriculum Accordion style.</li>
+
+      <li><strong>Disable ajax in course unit load</strong>: Whenever you click on unit in course timeline by default, it loads using ajax, so disabling ajax loads unit by refreshing the page. This option(disabling ajax) can be used if you wish to use third party plugins like Visual composer, layer slider (not compatible with ajax) in unit pages.</li>
+
+      <li><strong>Auto-mark unit complete when user proceeds to next unit</strong>: If u checked the checkbox then it will hide "Mark Unit Complete" button and auto marks the unit as completed when user proceeds to next unit.</li>
+
+      <li><strong>Auto trigger finish course button</strong>: If u checked the checkbox then it will hide the finish course button and it is automatically triggered on completion of all the units and quizzes in the course.</li>
+
+      <li><strong>Skip Course status page</strong>: Whenever you click on start course button then (by default) you are taken to the course status page in which the course instructions are shown. But if you check this checkbox then this course status page will be skipped and the users will be directly taken to the first unit of the course. </li>
+    </ul>
+
+    <h4><strong>Course Pricing Settings</strong></h4>
+    <ul>
+      <li><strong>Coming soon courses</strong>: If u checked the checkbox  then it enables the coming soon
+      options for courses in the course pricing section.</li>
+
+      <li><strong>Enable Course Codes</strong>: If u checked the checkbox then student can purchase/access courses by using custom defined codes for courses in course pricing section.</li>
+
+      <li><strong>Enable Course external link</strong>: If u checked the checkbox then you can connect "Take this Course" button with an external link, defined in Course Pricing section.</li>
+
+      <li><strong>Disable Auto allocation of Free courses</strong>: Whenever a user opens a course page and if that course is a free course then the user gets enrolled in the course automatically. If you check this checkbox then the user will not be enrolled in the free course automatically until they click on the take this course button.</li>
+    </ul>
+
+    <h4><strong>Drip Settings</strong></h4>
+    <ul>
+      <li><strong>Enable Unit Time as Drip Duration</strong>: For courses under drip feed you can dynamically adjust the drip duration(time span between two consecutive units) from unit duration.</li>
+
+      <li><strong>Enable Section Drip feed</strong>: If u checked the checkbox then drip feed is applies section wise instead of unit wise.</li>
+    </ul>
+
+    <h4><strong>Unit Settings</strong></h4>
+    <ul>
+      <li><strong>Show Unit Description in Course curriculum</strong>: If u checked the checkbox then unit description appears below unit titles in Course curriculum.</li>
+
+      <li><strong>Show User progress in Course Admin</strong>: If u checked the checkbox then it  will show small progress bar for every user below her name in COURSE->ADMIN SECTION.</li>
+
+      <li><strong>Enable Unit/Quiz Start Date time</strong>: If u checked the checkbox then it  will add setting in the units and quizzes settings to set the start date and time in it and the units and quizzes will start at a particulat date and time.</li>
+
+      <li><strong>Unit comments/Notes</strong>: Enable unit comments only where comments is enabled for units. You can enable/disable notes/discussion features for particular units by editing the units in wp-admin panel and disabling comments in discussion metabox.</li>
+    </ul>
+
+    <h4><strong>Quiz/Assignment Settings</strong></h4>
+    <ul>
+      <li><strong>Enable In-Course Quiz</strong>: If u checked the checkbox then quizzes open inside course like units.</li>
+
+      <li><strong>In-Course Quiz questions per page</strong>: It set number of questions appearing per page in in-course quizzes.</li>
+
+      <li><strong>Enable passing score for Quiz</strong>: If u checked the checkbox then it will set a passing score for every quiz, Student progress to next unit/quiz is restricted if user fails in quiz.</li>
+
+      <li><strong>Force Quiz availability to Course students</strong>: If u checked the checkbox then only course students can take the quiz. Please make sure quiz is connected to the course in quiz settings.</li>
+
+      <li><strong>Hide correct answers</strong>: If u checked the checkbox then correct answers in quizzes are not displayed unless student has finished/submitted the course.</li>
+
+      <li><strong>Enable negative marking</strong>: If u checked the checkbox then it enables negative marking for questions in quizzes.</li>
+
+      <li><strong>Show Assignments in Course Curriculum</strong>: If u checked the checkbox then assignments will be displayed in course curriculum.</li>
+
+      <li><strong>Display Submission time in Course/Quiz/Assignment submissions</strong>: This setting displays time (eg 2 hrs) with manual submissions, * requires activity to be enabled.</li>
+    </ul>
+
+    <h4><strong>Front End Settings</strong></h4>
+    <ul>
+      <li><strong>Force Administrator Approval on every setting</strong>: If u checked the checkbox then instructor's courses will go to pending mode when settings/pricing/curriculum is saved. *Requires Admin Approval enabled in WPLMS - Course Manager.</li>
+
+      <li><strong>Enable Front end course deletion</strong>: If u checked the checkbox then instructors will be able to delete course and related content from front end.</li>
+    </ul>
+
+    <h4><strong>Miscellaneous Settings</strong></h4>
+    <ul>
+      <li><strong>Revert pretty permalinks for Courses</strong>: If u checked the checkbox then it will revert permalinks from coursname/admin to coursename/?action-.</li>
+
+      <li><strong>Enable Course forum privacy</strong>: If u checked the checkbox then it only course students can access course forums.</li>
+
+      <li><strong>Default order in course directory</strong>: A dropdown containing order:
         <ul>
           <li>Recent</li>
           <li>Alphabetical</li>
           <li>Number of students</li>
           <li>Rating</li>
+          <li>Upcoming Courses via Start date</li>
+          <li>Random</li>
         </ul>
-        <p>by default it is set to menu order</p>
-        <h4>Screenshot Walkthrough</h4>
-        <div class="bs-callout bs-callout-info">
-          <div class="gallery normal"><a href="images/g3.png" title=""><img src="images/g3.png" alt="wplms-settings" width="60" height="37"></a></div>
-        </div>
+        <p>By default it is set to recent</p>
       </li>
+
       <li><strong>Default order in Members directory</strong>:: a dropdown containing order
         <ul>
           <li>Last active</li>
@@ -1843,26 +1950,18 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
           <li>Aplhabetical</li>
         </ul>
         <p>by default it is set to menu order</p>
+      </li>
 
-        <h4>Screenshot Walkthrough</h4>
-        <div class="bs-callout bs-callout-info">
-          <div class="gallery normal"><a href="images/g4.png" title=""><img src="images/g4.png" alt="wplms-settings" width="60" height="37"></a></div>
-        </div>
+      <li><strong>Limit Number of Courses per Instructor</strong>: You can limit number of courses per instructor by specifying the number in the box( 0 for unlimited course per instructor ).
       </li>
-      <li><strong>Instructor Signup Ninja Forms Form ID</strong>:set ninja form id for instructor signup.
-      </li>
-      <li><strong>Limit Number of Courses per Instructor</strong>:you can limit no. of courses per instructor by specifying the no. in the box( 0 for unlimited course per instructor ).
-      </li>
-      <li><strong>Limit Number of Units Created per Instructor</strong>:you can limit no. of units per instructor by specifying the no. in the box( 0 for unlimited course per instructor ).
-      </li>
-      <li><strong>Limit Number of Quiz Created per Instructor</strong>:you can limit no. of quizzes per instructor by specifying the no. in the box( 0 for unlimited course per instructor ).
-      </li>
-      <h4>Screenshot Walkthrough</h4>
-        <div class="bs-callout bs-callout-info">
-          <div class="gallery normal"><a href="images/g5.png" title=""><img src="images/g5.png" alt="wplms-settings" width="60" height="37"></a><a href="images/g6.png" title=""><img src="images/g6.png" alt="wplms-settings" width="60" height="37"></a></div>
-        </div>
 
+      <li><strong>Limit Number of Units Created per Instructor</strong>: You can limit number of units per instructor by specifying the number in the box( 0 for unlimited course per instructor ).
+      </li>
+
+      <li><strong>Limit Number of Quiz Created per Instructor</strong>: You can limit number of quizzes per instructor by specifying the number in the box( 0 for unlimited course per instructor ).
+      </li>
     </ul>
+
     <h2 id="lms_setting-set_commission">Set Commissions</h2>
       <p>
       you can set commissions of instructor based on course and the instructor of the same.different instructors may assign different commissions.the commission is assigned in percentage value.
@@ -1998,64 +2097,38 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
                 </div>
             <h2 id="lms_setting-emails" >Emails</h2>
                           <p class="lead">
-                          Configure email template for Emails and set the email options such as email id and from name,email activation , email schedule on unit drip feed and course expiry and generate the email template.
-                          Recommended plugin for emails <srtong>https://wordpress.org/plugins/wpmandrill/</srtong>
+                          All the email templates are now migrated to buddypress email template. Here you can set the from and email address from which the email will be sent. Also you can edit the email template from the buddypress emails whose link is provided here.
                           </p>
                             <h3 id="lms_setting-emails_options">Emails Options</h3>
-                            <p>
-                              Set "From" name, "From" email and charset from which the email is to be sent.
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e1.png" title=""><img src="images/e1.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-                            <h3 id="lms_setting-emails_activation">Account Activation Email</h3>
-                            <p>
-                              Set Subject and Message that is to be sent in email when the user registers on wplms site.
-                              Use the shortcode :<strong> {{activationlink}} to add the activation link in the email.</strong>
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e2.png" title=""><img src="images/e2.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
+                            <ul>
+                              <li>Set "From" name, this is the name from which the email will be sent.</li>
+                              <li> Set "From" email, from which the email is to be sent.</li>
+                              <li>You can edit the contact Form Email.</li>
+                              <li>You can edit the activation Email.</li>
+                              <li>You can edit the forgot password Email.</li>
+                            </ul>
 
-                           <h3 id="lms_setting-emails_forgotpassword">Forgot password Email</h3>
-                            <p>
-                              Set Subject and Message that is to be sent in email when the user forgots the password.
-                              
-                            </p>
                           
 
                              <h3 id="lms_setting-emails_schedule">Email Schedule</h3>
+                             <ul>
+                              <li>
+                                Set the Drip feed email when the unit or section will be available.
+                                Enable/disable the drip feed email,schedule the email time i.e schedule the time when the unit or section will be available for example:before 12 hours of availablity,set the subject and messgae that is to be sent in email.
+                              </li>
+                              <li>
+                                Set the course expiry email.
+                                Enable/disable the course expiry email,schedule the email time i.e schedule the email time when the course will be expired for example:before 12 hours of expiry,set the subject and messgae that is to be sent in email.
+                              </li>
+                              <li>
+                                Set the inactivity email.
+                                Enable/disable the user inactivity email,schedule the email time i.e schedule the email time when the user is inactive on the website, for example:you set the inactivity email time to 30, this means the users who are inactive for more than 30 days will be sent the email. <a href="https://vibethemes.com/documentation/wplms/knowledge-base/schedule-email-for-inactive-users/">Tutorial</a>
+                              </li>
+                            </ul>
+                            <h3 id="lms_setting-emails_template">Scheduled Email.</h3>
                             <p>
-                              Set the Drip feed email when the unit or section will be available.
-                              Enable/disable the drip feed email,schedule the email time i.e schedule the time when the unit or section will be available for example:before 12 hours of availablity,set the subject and messgae that is to be sent in email.
-                              Use this shortcode :<strong>{{unit}} for Unit name, {{course}} for Course name & link, {{user}} for User name</strong>
+                              You can check which emails are scheduled in your website to be sent.
                             </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e3.png" title=""><img src="images/e3.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-
-                            <p>
-                              Set the course expiry email.
-                              Enable/disable the course expiry email,schedule the email time i.e schedule the email time when the course will be expired for example:before 12 hours of expiry,set the subject and messgae that is to be sent in email.
-                              Use this shortcode :<strong>{{course}} for Course name & link, {{user}} for User name</strong>
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e4.png" title=""><img src="images/e4.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
-                            <h3 id="lms_setting-emails_template">Email Template</h3>
-                            <p>
-                              Now you can make your custom template that is to be sent in emails.
-                              Set the different colors for different area and generate a beautiful template.
-                              You can also view the code of generated template by click on "view generated template" button.Apply the colors and click on "Apply changes".
-                            </p>
-                            <h4>Screenshot Walkthrough</h4>
-                            <div class="bs-callout bs-callout-info">
-                              <div class="gallery normal"><a href="images/e5.png" title=""><img src="images/e5.png" alt="wplms-settings" width="60" height="37"></a><a href="images/e6.png" title=""><img src="images/e6.png" alt="wplms-settings" width="60" height="37"></a></div>
-                            </div>
               <h2 id="lms_setting-email-video">Watch This Video For Touch Points Emails, Messages, Notifications</h2>
               <iframe width="849" height="480" src="https://www.youtube.com/embed/mmt81gWbDDE" frameborder="0" allowfullscreen></iframe>
 <!--end of Lms Settings-->
