@@ -1944,6 +1944,10 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
       <li><strong>Fix Course Menu on Scroll</strong>: If u checked the checkbox then the course menu will be fixed even if you scroll the page. Its suitable if you have very long course descriptions. It developed for only c2, c3 and c5 layout</li>
 
       <li><strong>Show course Badge & Certificate in popup on course details</strong>: If u checked the checkbox then it will display the course badge and certificate in popup in the course details section.</li>
+
+      <li><strong>Open Login popup for non-logged in users when they click on take this course button</strong>:If u checked the checkbox it will open a login page popup when a non-logged in user click on take this course.</li>
+
+      <li><strong>Enable Course Duration From Start Course</strong>:If u checked the checkbox the course duration will be calculated from the time the user clicks on start course button.</li>
     </ul>
 
     <h4><strong>Course Status Settings</strong></h4>
@@ -1951,6 +1955,8 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
       <li><strong>Course Timeline Accordion style</strong>: If u checked the checkbox then it  will show curriculum Accordion style.</li>
 
       <li><strong>Disable ajax in course unit load</strong>: Whenever you click on unit in course timeline by default, it loads using ajax, so disabling ajax loads unit by refreshing the page. This option(disabling ajax) can be used if you wish to use third party plugins like Visual composer, layer slider (not compatible with ajax) in unit pages.</li>
+
+      <li><strong>Show unit slug and title in course status page</strong>:If u checked the checkbox then Unit slug and title is displayed in the title of the course status page when user is viewing a unit </li>
 
       <li><strong>Auto-mark unit complete when user proceeds to next unit</strong>: If u checked the checkbox then it will hide "Mark Unit Complete" button and auto marks the unit as completed when user proceeds to next unit.</li>
 
@@ -1969,13 +1975,6 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
       <li><strong>Enable Course external link</strong>: If u checked the checkbox then you can connect "Take this Course" button with an external link, defined in Course Pricing section.</li>
 
       <li><strong>Disable Auto allocation of Free courses</strong>: Whenever a user opens a course page and if that course is a free course then the user gets enrolled in the course automatically. If you check this checkbox then the user will not be enrolled in the free course automatically until they click on the take this course button.</li>
-    </ul>
-
-    <h4><strong>Drip Settings</strong></h4>
-    <ul>
-      <li><strong>Enable Unit Time as Drip Duration</strong>: For courses under drip feed you can dynamically adjust the drip duration(time span between two consecutive units) from unit duration.</li>
-
-      <li><strong>Enable Section Drip feed</strong>: If u checked the checkbox then drip feed is applies section wise instead of unit wise.</li>
     </ul>
 
     <h4><strong>Unit Settings</strong></h4>
@@ -1997,13 +1996,16 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
 
       <li><strong>Enable passing score for Quiz</strong>: If u checked the checkbox then it will set a passing score for every quiz, Student progress to next unit/quiz is restricted if user fails in quiz.</li>
 
+       <li><strong>Enable partialy marking for Quiz</strong>: If u checked the checkbox then it will enables the ability to give partial marks in quizzes.
+       </li>
+
       <li><strong>Force Quiz availability to Course students</strong>: If u checked the checkbox then only course students can take the quiz. Please make sure quiz is connected to the course in quiz settings.</li>
 
       <li><strong>Hide correct answers</strong>: If u checked the checkbox then correct answers in quizzes are not displayed unless student has finished/submitted the course.</li>
 
       <li><strong>Enable negative marking</strong>: Enables plupload in assignments(No upload limit).</li>
 
-      <li><strong>Enable PL Upload In Assignments</strong>: If u checked the checkbox then it enables negative marking for questions in quizzes.</li>
+      <li><strong>Exclude quizzes not connected to course from evaluation</strong>: If you checked the checkbox then it will not consider quizzes that are not connected to course in quiz settings in course evaluation</li>
 
       <li><strong>Show Assignments in Course Curriculum</strong>: If u checked the checkbox then assignments will be displayed in course curriculum.</li>
 
@@ -2052,23 +2054,28 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
 
       <li><strong>Limit Number of Quiz Created per Instructor</strong>: You can limit number of quizzes per instructor by specifying the number in the box( 0 for unlimited course per instructor ).
       </li>
-    </ul>
-    <h4><strong>WPLMS Gift Course Settings</strong></h4>
-    <ul>
-      <li><strong>Enable non logged in users to send gift</strong>: Enabling this setting will allow non logged in users to send gifts.</li>
 
+      <li><strong>Buy Points Link</strong>: You can Buy Points for MyCred, displayed when user points are less than required.
+      </li>
+    </ul>
+
+    <h4><strong>WPLMS Gift Course Settings(Required when Gift course Plugin is Activated)</strong></h4>
+    <ul>
+      <li><strong>Enable non-logged in users to send gifts</strong>: Enabling this setting will allow non-logged in users to send gifts.</li>
       <li><strong>Send free courses as gift</strong>: Enabling this setting will allow users to gift free courses also.</li>
-
-      <li><strong>Buy Points Link</strong>: Buy Points for MyCred, displayed when user points are less than required.</li>
     </ul>
-    <h4><strong>WPLMS Wishlist Settings</strong></h4>
-    <ul>
-      <li><strong>Disable add to collection icon on courses</strong>: Enable to disable direct add to collection on courses.</li>
-    </ul>
+    
     <h4><strong>WPLMS Course Events Settings</strong></h4>
     <ul>
       <li><strong>Course Events calendar display</strong>: Choose from two types of calender. 
       Default and list type.</li>
+    </ul>
+
+    <h4><strong>WPLMS Tours Settings</strong></h4>
+    <ul>
+      <li><strong>Enable Tours</strong>: If u checked the checkbox, this will enable tour functionality in site. The tour functionality will guide you how to pursue a course.</li>
+
+      <li><strong>Enable all tours by default for users</strong>: If u checked the checkbox, this will enable all tours by default for users.</li>
     </ul>
 
 
