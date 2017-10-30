@@ -580,6 +580,9 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
       
       <li><strong>Tab style course layout:</strong>From Wplms version 2.6 we have added tabs style course page layout.Tutorial link : <a href="http://vibethemes.com/documentation/wplms/knowledge-base/tabs-style-in-course-menu-with-custom-sections/">LINK</a>
       </li>
+
+      <li><strong>Disable right click in course status page:</strong>disable right click for content copy in course status page.</li>
+
       <li><strong>Course status templates:</strong>From Wplms version 2.5 we have added two course status templates .
       </li>
 
@@ -2128,7 +2131,6 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
   <h2 id="lms_setting-group_types">Group Types</h2>
     <p>After adding group types you can set the group types.</p>
 
-
     <h2 id="lms_setting-set_commission">Set Commissions</h2>
       <p>
       you can set commissions of instructor based on course and the instructor of the same.different instructors may assign different commissions.the commission is assigned in percentage value.
@@ -2291,6 +2293,10 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
                                 Set the inactivity email.
                                 Enable/disable the user inactivity email,schedule the email time i.e schedule the email time when the user is inactive on the website, for example:you set the inactivity email time to 30, this means the users who are inactive for more than 30 days will be sent the email. <a href="https://vibethemes.com/documentation/wplms/knowledge-base/schedule-email-for-inactive-users/">Tutorial</a>
                               </li>
+                              <li>
+                                Schedule Course Review Email.
+                                Enable/disable the schedule course review email i.e. email students when the course is finished and the user has not given any review to the course.
+                              </li>
                             </ul>
                             <h3 id="lms_setting-emails_template">Scheduled Email.</h3>
                             <p>
@@ -2303,9 +2309,27 @@ The sidebars are used in almost all the pages in WPLMS. Although sidebars are co
 <h1 id="lms_tree" class="page-header">LMS Tree</h1>
   <p>Lms Tree is the tree which display course as the Branch and units and assignment as the sub-branches.Lms tree helps in viewing and editing all your courses and associated units and assignemnt through one place.
   </p>
+
+  <h3 id="lms_course_navigation">Course Navigation(If WPLMS Course Custom Nav Plugin is Activated)</h3>
+    <p>First of all please note that the hide show course settings feature will work for instructors only.
+      Admin will see all the settings always. There are two settings screens in this plugin. One is for Custom course section and other for Course creation settings (hide/show).</p>
+      <p><strong>1. Custom Sections :</strong>Just Click on Add Custom Section. It will show a form to add a section which will have 5 settings namely:</p>
+        <ul>
+          <li><strong>Add Section Title :</strong>Add Title for the section.</li>
+          <li><strong>Add Section Slug :</strong>For the slug and permalink settings. This must be unique and does not contain any spaces.</li>
+          <li><strong>Add Section Description :</strong>Add Description for the section.</li>   
+          <li><strong>Select Courses :</strong>In which courses it should be visible.</li>   
+          <li><strong>Select Section Visibility :</strong>Set section visibility to make that section visible for specific group of users.</li>   
+        </ul>
+      <strong>Imp note : Please do not forget to re-save permalinks after each section you save by clicking on save section button.</strong>
+      <p><strong>2. Front end course creation :</strong>this screen will show the show,hide and defaults values for the course settings that you will hide.
+      There are some settings for which defaults are not available as they can be saved as blank.
+      </p>
+      <strong>Imp Note : Please note that if any settings are added or removed in course then please re-save the hide/show settings again as more settings can be added to the course by using this tip. It is necessary that if you hide any settings you must provide default value in it to avoid any conflicts.</strong>
+  
   <h4 id="frontend-video">Video Tutorial</h4>
   <div class="fitvids">
-<iframe width="740" height="480" src="https://www.youtube.com/embed/Rvt9GR0ZVG8" frameborder="0" allowfullscreen></iframe>
+    <iframe width="740" height="480" src="https://www.youtube.com/embed/Rvt9GR0ZVG8" frameborder="0" allowfullscreen></iframe>
   </div>
 <hr />
 
