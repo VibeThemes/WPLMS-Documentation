@@ -44,6 +44,9 @@ hr{margin: 1.5rem 0;
 	bordeR: 1px solid rgba(0,0,0,0.2);
     padding: 0 1rem;
     margin:1rem 0;
+    a:not(.active){
+    	color:#aaa;
+    }
 }
 .clear{
 	margin:1rem 0;

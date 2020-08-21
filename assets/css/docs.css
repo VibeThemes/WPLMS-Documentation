@@ -1,3 +1,4 @@
+/* CopyRight VibeThems @2020 */
 * {
   margin: 0;
   padding: 0;
@@ -121,6 +122,9 @@ body {
       box-shadow: 0 12px 15px rgba(0, 0, 0, 0.2); }
       .setup_wizard_main a.important_notice:hover {
         transform: translateY(-2px); }
+  .setup_wizard_main h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem; }
   .setup_wizard_main .wplms_about_tabs input {
     display: none; }
   .setup_wizard_main .wplms_about_tabs hr {
@@ -1083,6 +1087,8 @@ hr {
   bordeR: 1px solid rgba(0, 0, 0, 0.2);
   padding: 0 1rem;
   margin: 1rem 0; }
+  .reference_menu a:not(.active) {
+    color: #aaa; }
 
 .clear {
   margin: 1rem 0;

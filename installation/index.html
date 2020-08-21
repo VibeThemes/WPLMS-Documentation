@@ -43,7 +43,7 @@
 			<div class="columns">
 
 				<p><strong> What is a Fresh WordPress site ?</strong>
-					A Fresh WordPress site is a WordPress site with no content inside it. A fresh wordpress site will have 1 page with title Sample Page, 1 post with title Hello world !.
+					A Fresh WordPress site is a WordPress site with no content inside it. A fresh wordpress site will have 1 page with title Sample Page, 1 post with title Hello world !. One plugin Hello Dolly and Default WordPress Themes like TwentyTwenty.
 				</p>
 				<div class="message info">
 					<span class="vicon vicon-info"></span>
@@ -63,8 +63,9 @@
 				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#hosting_requirements" class="active">Hosting Requirements & Recommendations</a></li>
 						<li><a href="#uploading">Uploading Theme</a></li>
+						<li><a href="#setup_wizard">Setup Wizard</a></li>
 						<li><a href="#plugins">Installing Plugins</a></li>
 						<li><a href="#sample_data">Installing Sample Data</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
@@ -105,7 +106,26 @@
 			<p>Although any hosting plan should work for WPLMS. A <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> or above plan provides better compatibility and lesser issues in the long run. Sharing hosting with everything unlimited usually do not work out good because the server is shared among many entities. From our observation : WPEngine, HostGator, KnownHost, OVH, DigitalOcean and SiteGround are good hosting providers. This list by no means is an exhaustive list, you are free to try other options and if they work great you can help us in updating this list. Just send out an email <a href="http://themeforest.net/user/vibethemes/">here</a></p>
 			<hr>
 			<h2 id="uploading">Uploading the theme</h2>
-			<p>Uploading the WPLMS theme is just like any other theme. Following are the steps you can follow to upload the theme.<p>
+
+			<div class="columns">
+				<div>
+					
+					<p>Uploading the WPLMS theme is just like any other theme. Following are the steps you can follow to upload the theme.<p>
+					
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#uploading"  class="active">Uploading Theme</a></li>
+						<li><a href="#setup_wizard">Setup Wizard</a></li>
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+
 			<div class="clear"></div>
 			<strong>Downloading the theme</strong>
 			<p> Download the WPLMS WordPress theme from your Themeforest Account.</p>
@@ -124,13 +144,80 @@
 			<p>Click on Upload Theme button. A Upload form will appear. Drag and drop the theme downloaded in the previous step here. Click on Install Button</p>
 			<img src="../assets/img/select_install.png" width="640" alt="wp screenshot" />
 			<div class="clear"></div>
-			<p>If you see the below error while uploading the theme, it most likely means that your server is restricting the upload.</p>
+			<p>If you see the below error while uploading the theme, it most likely means that yoursame server is restricting the upload.</p>
 			<img src="../assets/img/WordPress-Link-Expiration.png" width="640" alt="wp screenshot"  />
 			<p>The possible reasons for above are :</p>
+			<ol>
+				<li>Server Upload limit less than 8MB.</li>
+				<li>PHP Zip library not installed</li>
+				<li>File permissions incorrect.</li>
+				<li>WordPress incorrectly configured.</li>
+				<li>Previous attempt of uploading the theme failed due to network issues.</li>
+			</ol>
+			<p>The best course of action in all above cases is to contact your web host. For the last step "previous failed attempt", you can login via FTP and locate for wp-content/themes/wplms folder and remove it.</p>
+			<hr>
+			<h2 id="setup_wizard">Setup Wizard</h2>
+			<div class="columns">
+				<div>
+					
+					<p>On uploading and activating the theme, you will see a setup wizard automatically taking control of the things. This is expected and recommended method of installing the theme.<p>
+					<p>The Purpose of the setup wizard is to configure a lot of settings automatically and avoid the hassle of manually configuring the theme.</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#uploading">Uploading Theme</a></li>
+						<li><a href="#setup_wizard"  class="active">Setup Wizard</a></li>
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="clear"></div>
+			<h4>Selecting an Installation Type</h4>
+			<p>We have categorised the WPLMS theme usage into 4 broad categories : Instructor, Academy, University and MOOC (massive open online courses ). We've Demonstrated the theme into above broad categories and selected a feature set for each of these categories. However, this is just a classification factor and during the course of setup wizard you are free to enable recommended feature, designs for  the type of installation you are selecting in this step.</p>
+			<p>Even after the setup has been completed you can always re-run the setup wizard and enable disable features which you may need later on. For example : <a href="https://www.youtube.com/watch?v=kmIa8kfTxjA">Enabling BigBlueButton Meetings in existing site.</a></p>
+			<img src="../assets/img/setup_wizard.png" width="640" alt="themeforest screenshot" />
+			<br>
+			<p>You will also see configuration checks and file permission checks which indicate any potential problem theat may arise during the setup wizard. Mouse over to see more details.</p>
+			<p>It is always better to make sure there is no failed configuration and file permission checks. However, sometimes failed check in configuration can also appear if the wordpres is unable to identify them.</p>
+			<div class="clear"></div>
 			
-			<p>The best course of action</p>
+			<h4>Select a Demo Style</h4>
+			<p>If you want to install a Theme Demonstration [Demo] then click on the image to select it. When a Demo installation is selected, you will see a check mark over it. To switch to another demo click on its image select it. To see how the demo works, click on the pop-out icon and you can go through the demos. </p><p>Chosing latest demos is always a good idea as they have better design and import wizard has been tested thorroughly for the demos.</p>
+			<p>You can skip this step from the bottom skip option to not install any content or demo style.</p><p>The images in this screen require an active internet connection, if you do not see images then please check your internet connection.</p>
+			<img src="../assets/img/theme_selection.png" width="640" alt="themeforest screenshot" />
+			<p>Below the demos you will find import content section. This expects a upload file to use as a demo style. We will come back to this area in later sections.</p>
+			<div class="message help" id="import_existing_wplms_content">
+				<span class="vicon vicon-help"></span>
+			<p>If you have an existing WPLMS site or you are developing WPLMS site in your local computer. You can use the WPLMS Export wizard to take out the export zip from your site and import that zip file here.</p>
+			</div>
+			<div class="clear"></div>
+			<h4>Select Features for this Site</h4>
+			<p>In this area you select features for your site. To select a feature click on it and a check mark would appear over it. Click on it again to remove the check mark. Some of the features will come pre-selected based on the demo style you've selected in previous step.</p>
+			<img src="../assets/img/wplms_features.png" width="640" alt="themeforest screenshot" />
 			<hr>
 			<h2 id="plugins">Installing Plugins</h2>
+			<div class="columns">
+				<div>
+					
+					<p>Th theme comes with required and recommended set of plugins.Note that recommendations are good to have but not absolute necessity for the theme to work.<p>
+					<p>The </p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#uploading">Uploading Theme</a></li>
+						<li><a href="#setup_wizard">Setup Wizard</a></li>
+						<li><a href="#plugins" class="active">Installing Plugins</a></li>
+						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
 			<hr>
 			<h2 id="sample_data">Installing Sample Data</h2>
 			<hr>
