@@ -42,6 +42,7 @@ hr{margin: 1.5rem 0;
 .reference_menu{
 	max-width:640px;
 	bordeR: 1px solid rgba(0,0,0,0.2);
+	background:#fafcff;
     padding: 0 1rem;
     margin:1rem 0;
     a:not(.active){
@@ -88,5 +89,35 @@ hr{margin: 1.5rem 0;
 
 	&.help {
 	    background: #ccffcc;
+	}
+}
+
+.accordions_wrapper{
+	display:flex;
+	flex-direction:column;
+	.accordion{	
+		input[type="checkbox"],
+		.description{display:none;}
+		display:flex;
+		flex-direction:column;
+		input[type="checkbox"]:checked ~.description{
+			display:flex;
+			flex-direction:column;
+			background:#fff;
+			padding:1rem;
+			border:1px solid rgba(0,0,0,0.08);
+		}
+		label{
+			display:flex;align-items:center;
+			justify-content:space-between;
+			border-left:1px solid rgba(0,0,0,0.1);
+			&:after{
+				content:"\e61a";
+				font-family:'vicon';
+			}
+		}
+		input[type="checkbox"]:checked ~label:after{
+			content:"\e622";
+		}
 	}
 }

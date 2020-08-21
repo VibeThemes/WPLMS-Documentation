@@ -24,8 +24,8 @@
 			<br>
 			<span>WPLMS version 4.</span>
 			<ul>
-				<li class="active">Installing on a fresh WordPress Setup <span class="vicon vicon-arrow-right"></span></li>
-				<li><a href="existing.html">Installing on a existing WordPress site</a></li>
+				<li><a href="index.html">Installing on a fresh WordPress Setup </a></li>
+				<li class="active">Installing on a existing WordPress site<span class="vicon vicon-arrow-right"></span></li>
 				<li><a href="upgrading.html">Upgrading from 3.x version</a></li>
 			</ul>
 		</div>
@@ -37,32 +37,32 @@
 			<span>Having Troubles ? <a href="https://wplms.io/support">Get Help</a></span>
 		</div>
 		<div class="envato-setup-content">				
-			<h1>Installing WPLMS on a Fresh WordPress site.</h1>
-			<p>Installing WPLMS requires a working WordPress site. So, first you need to setup WordPress on your server. You can refer <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank">this link</a> on how to setup WordPress on your server.</p>
+			<h1>Installing WPLMS on an Existing WordPress site.</h1>
+			<p>If you have an existing WordPress site. First and foremost ensure that the content that you built in the site is built using a theme independent page builder. Which means switching the theme to WPLMS should not impact the page design and its content.</p>
 			<div class="columns">
 
-				<p><strong> What is a Fresh WordPress site ?</strong>
-					A Fresh WordPress site is a WordPress site with no content inside it. A fresh wordpress site will have 1 page with title Sample Page, 1 post with title Hello world !. One plugin Hello Dolly and Default WordPress Themes like TwentyTwenty.
+				<p><strong> What is a Page builder ?</strong>
+					A Page builder is a content generation tool. You can create Pages, posts and other information in your wordpress site using this tool.
+					<a href="https://www.wpcrafter.com/wordpress-page-builder-need-one-explained-detail/" target="_blank">Reference video</a>
 				</p>
 				<div class="message info">
 					<span class="vicon vicon-info"></span>
 					<span>
-					<p>You can also reset an exsiting WordPress site to get a fresh wordpress site.
-					<a href="https://www.wpbeginner.com/wp-tutorials/how-to-restart-a-wordpress-site-reset-wordpress-the-fast-way/" target="_blank">Learn how to reset &rsaquo;</a></p>
+					<p>WPLMS comes deep integrated with Elementor.
+					<a href="https://wordpress.org/plugins/elementor/" target="_blank">Learn how to use &rsaquo;</a></p>
 					</span>
 				</div>
 			</div>
 			<hr>
-			<h2 id="hosting_requirements">Hosting Requirements and Recommendations for the WPLMS Theme</h2>
+			<h2 id="hosting_requirements">Prepare a backup</h2>
 			<div class="columns">
 				<div>
-					<p>The WPLMS is an advanced WordPress theme. It provides a complete framework for building educational sites, so comparing WPLMS with any other regular WordPress theme is like comparing apples to oranges.</p>
-					<p>WPLMS uses popuplar plugins maintained by the WordPress core team like the BuddyPress, WooCommerce and BBPress. </p>
+					<p>Even thought we are absolute certain that nothing can go wrong during while following this wizard, there are still contigencies which we can not tackle alone from the wizard itself. A network failure, server overload, traffic congestion are few examples why we should always prepare a backup of the site before migrating to WPLMS.</p>
 					
 				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements" class="active">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#backup" class="active">Prepare a Backup</a></li>
 						<li><a href="#uploading">Uploading Theme</a></li>
 						<li><a href="#setup_wizard">Setup Wizard</a></li>
 						<li><a href="#authenticate">Authenticate</a></li>
@@ -74,7 +74,7 @@
 					</ol>
 				</div>
 			</div>
-			<p>Out of these only BuddyPress is the required plugin. If you need to sell courses you will be required to install WooCommerce. If you need Discussion forums in your site, you will need to install BBPress.</p>
+			<p>WPLMS is a BuddyPress theme and BuddyPress is the required plugin. If you need to sell courses you will be required to install WooCommerce. If you need Discussion forums in your site, you will need to install BBPress.</p>
 			<p>The Hosting recommendations posted by these plugins are the basis for WPLMS Hosting recommendations as well.</p>
 			<div class="columns">
 				<div><ul>
@@ -326,8 +326,9 @@
 				<div>
 					
 					<p>The most important step for installing demo content.<p>
-					<p>We advise to install all content for a fresh WordPress setup to avoid any issues and output look similar to the demo.</p>
-					<p>You will see many sections to import and this is a time consuming process. Content is downloaded from the demo and from our Amazon servers and imported in your site.</p>
+					<strong>We strongly advise <span style="color:red">not</span> to select all data blindly and import .</strong>
+					<p>The data import would add a lot of sample posts which is garbage into your site. So take caution and select appropriately.</p>
+					<p>We recommend selecting Member Profiles, Member Cards, Course Cards, Course layouts, Group Layouts and Group cards. You can also select pages to get the demo pages from the site.</p>
 				</div>
 
 				<div class="reference_menu">

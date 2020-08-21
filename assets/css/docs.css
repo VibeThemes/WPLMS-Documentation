@@ -70,6 +70,9 @@ body {
       list-style: none;
       margin: 2rem 0;
       padding: 0; }
+      .setup_wizard_wrapper_wrapper .setup_wizard_wrapper .onboarding_introduction ul li {
+        opacity: 0.6;
+        font-weight: 400; }
       .setup_wizard_wrapper_wrapper .setup_wizard_wrapper .onboarding_introduction ul .active {
         color: #fff;
         opacity: 1;
@@ -1085,6 +1088,7 @@ hr {
 .reference_menu {
   max-width: 640px;
   bordeR: 1px solid rgba(0, 0, 0, 0.2);
+  background: #fafcff;
   padding: 0 1rem;
   margin: 1rem 0; }
   .reference_menu a:not(.active) {
@@ -1123,6 +1127,32 @@ hr {
     color: #fff; }
   .message.help {
     background: #ccffcc; }
+
+.accordions_wrapper {
+  display: flex;
+  flex-direction: column; }
+  .accordions_wrapper .accordion {
+    display: flex;
+    flex-direction: column; }
+    .accordions_wrapper .accordion input[type="checkbox"],
+    .accordions_wrapper .accordion .description {
+      display: none; }
+    .accordions_wrapper .accordion input[type="checkbox"]:checked ~ .description {
+      display: flex;
+      flex-direction: column;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid rgba(0, 0, 0, 0.08); }
+    .accordions_wrapper .accordion label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-left: 1px solid rgba(0, 0, 0, 0.1); }
+      .accordions_wrapper .accordion label:after {
+        content: "\e61a";
+        font-family: 'vicon'; }
+    .accordions_wrapper .accordion input[type="checkbox"]:checked ~ label:after {
+      content: "\e622"; }
 
 .loader {
   position: fixed;

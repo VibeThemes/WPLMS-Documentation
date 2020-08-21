@@ -69,8 +69,14 @@ body {
         }
         &>*{flex:1;}
         .onboarding_introduction{flex:2;
-        ul{list-style:none;margin:2rem 0;padding:0;.active{color:#fff;opacity:1;    font-weight: 700;}
-        li{display:flex;align-items:center;    justify-content: space-between;}li+li{margin-top:1rem;}}}
+        ul{list-style:none;margin:2rem 0;padding:0;
+        li{
+            opacity:0.6;font-weight:400;
+        }
+        .active{color:#fff;opacity:1;    font-weight: 700;}
+        li{display:flex;align-items:center;    justify-content: space-between;}
+        
+        li+li{margin-top:1rem;}}}
         .onboarding_header {
             display:flex;flex:1;
             justify-content: space-between;
