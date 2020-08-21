@@ -1,0 +1,59 @@
+@import 'general.scss';
+@import 'elements.scss';
+
+.loader{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #2B6CF6;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition:all 0.5s;
+    animation-delay: 0;
+    animation: fadeout 2s  forwards;
+    span{
+        color: #fff;
+        width: 120px;
+        height: 120px;
+        background: #fff;
+        border-radius: 50%;
+        animation: drop 1.8s forwards;
+    }
+}
+
+.action_buttons{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1.5rem 0 0;
+}
+
+@keyframes drop {
+  0% {
+    transform: scale(0);
+  }
+  10%{transform: scale(0.35);}
+  25%{transform: scale(0.2);}
+  50% {transform: scale(0.5);}
+  75% {transform: scale(1);}
+  85% {transform: scale(10);}
+  95% {transform: scale(10000);}
+  99% {transform: scale(10000);opacity:1;}
+  100%{opacity:0;}
+}
+
+
+@keyframes fadeout {
+  0% {
+    opacity:1;
+    z-index:9;
+  }
+  99% {opacity:1;}
+  100%{opacity:0;
+    z-index:-1;
+  }
+}

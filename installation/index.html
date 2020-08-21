@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WPLMS v 4 Introduction</title>			
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/docs.css?2" media="all">
+<link rel="stylesheet" href="../assets/vicons.css" media="all">
+</head>
+<body>
+<span class="loader"><span></span></span>
+<div class="setup_wizard_wrapper_wrapper">
+	<div class="setup_wizard_wrapper">
+	<div class="onboarding introduction">
+		<div class="onboarding_header">
+			<span>
+				<img id="wplms_logo" class="site-logo" src="http://localhost/wplms/wp-content/themes/wplms/assets/images/logo.png" alt="wplms">
+				<span>The WordPress LMS</span>
+			</span>
+		</div>				
+		<div class="onboarding_introduction">
+			<h2>Installation</h2>
+			<br>
+			<span>WPLMS version 4.</span>
+			<ul>
+				<li class="active">Installing on a fresh WordPress Setup <span class="vicon vicon-arrow-right"></span></li>
+				<li>Installing on a existing WordPress site</li>
+				<li>Installing on a existing WPLMS site</li>
+				<li>Upgrading from 3.x version</li>
+			</ul>
+		</div>
+		<a href="../index.html">&lsaquo; Back to main</a>
+	</div>
+	<div class="setup_wizard_main" >
+		<div class="setup_wizard_main_header">
+			<span></span>
+			<span>Having Troubles ? <a href="https://wplms.io/support">Get Help</a></span>
+		</div>
+		<div class="envato-setup-content">				
+			<h1>Installing WPLMS on a Fresh WordPress site.</h1>
+			<p>Installing WPLMS requires a working WordPress site. So, first you need to setup WordPress on your server. You can refer <a href="https://wordpress.org/support/article/how-to-install-wordpress/" target="_blank">this link</a> on how to setup WordPress on your server.</p>
+			<div class="columns">
+
+				<p><strong> What is a Fresh WordPress site ?</strong>
+					A Fresh WordPress site is a WordPress site with no content inside it. A fresh wordpress site will have 1 page with title Sample Page, 1 post with title Hello world !.
+				</p>
+				<div class="message info">
+					<span class="vicon vicon-info"></span>
+					<span>
+					<p>You can also reset an exsiting WordPress site to get a fresh wordpress site.
+					<a href="https://www.wpbeginner.com/wp-tutorials/how-to-restart-a-wordpress-site-reset-wordpress-the-fast-way/" target="_blank">Learn how to reset &rsaquo;</a></p>
+					</span>
+				</div>
+			</div>
+			<hr>
+			<h2 id="hosting_requirements">Hosting Requirements and Recommendations for the WPLMS Theme</h2>
+			<div class="columns">
+				<div>
+					<p>The WPLMS is an advanced WordPress theme. It provides a complete framework for building educational sites, so comparing WPLMS with any other regular WordPress theme is like comparing apples to oranges.</p>
+					<p>WPLMS uses popuplar plugins maintained by the WordPress core team like the BuddyPress, WooCommerce and BBPress. </p>
+					
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
+						<li><a href="#uploading">Uploading Theme</a></li>
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p>Out of these only BuddyPress is the required plugin. If you need to sell courses you will be required to install WooCommerce. If you need Discussion forums in your site, you will need to install BBPress.</p>
+			<p>The Hosting recommendations posted by these plugins are the basis for WPLMS Hosting recommendations as well.</p>
+			<div class="columns">
+				<div><ul>
+					<li><strong>PHP Version</strong> <span>7.2.1 [tested upto version 7.4.8 as of 20th August 2020]</span></li>
+					<li><strong>Mysql/MariaDb Version</strong> <span>5.6+/10.1+</span></li>
+					<li><strong>Upload Limit</strong> <span>10 MB  or more</span></li>
+					<li><strong>PHP Memory Execution Limit</strong> <span>128 MB  or more</span></li>
+					<li><strong>PHP Time Limit</strong> <span>128 MB  or more</span></li>
+					<li><strong>PHP Post Max Size</strong> <span>128 MB  or more</span></li>
+					<li><strong>PHP Max Input Vars</strong> <span>128 MB  or more</span></li>
+					<li>
+						<strong>PHP extensions required</strong> 
+						<span style="opacity:0.6"> dom,gmagick,SimpleXML,ssh2,xml,<br>xmlreader,curl,date,exif,filter,ftp,gd,hash,iconv,imagick,json,libxml,<br>openssl,pcre,posix,sockets,SPL,tokenizerz,lib,mbstring,mysqli.</span>
+					</li>
+				</ul>
+				</div>
+				<div class="message info">
+					<span class="vicon vicon-info"></span>
+					<span>
+					<p>The Upload limit is required for the theme even before you can begin uploading. Other wise you will see an error “The link you followed has expired.” while uploading the theme.
+					</p>
+					<img src="../assets/img/WordPress-Link-Expiration.png" width="320" />
+					<a href="https://kinsta.com/blog/wordpress-maximum-upload-file-size/" target="_blank">Learn how to increase upload limit &rsaquo;</a>
+					</span>
+				</div>
+			</div>
+			<br>
+			<p>As a principle we are not affiliated to any hosting company. So the recommendations posted here are unbiased and based on feedback we collected from our users.
+			</p>
+			<p>Although any hosting plan should work for WPLMS. A <a href="https://en.wikipedia.org/wiki/Virtual_private_server" target="_blank">VPS</a> or above plan provides better compatibility and lesser issues in the long run. Sharing hosting with everything unlimited usually do not work out good because the server is shared among many entities. From our observation : WPEngine, HostGator, KnownHost, OVH, DigitalOcean and SiteGround are good hosting providers. This list by no means is an exhaustive list, you are free to try other options and if they work great you can help us in updating this list. Just send out an email <a href="http://themeforest.net/user/vibethemes/">here</a></p>
+			<hr>
+			<h2 id="uploading">Uploading the theme</h2>
+			<p>Uploading the WPLMS theme is just like any other theme. Following are the steps you can follow to upload the theme.<p>
+			<div class="clear"></div>
+			<strong>Downloading the theme</strong>
+			<p> Download the WPLMS WordPress theme from your Themeforest Account.</p>
+			<img src="../assets/img/download_theme.png" width="640" alt="themeforest screenshot" />
+			<div class="clear"></div>
+			<strong>Log in to your WordPress Admin [a.k.a WP Admin]</strong>
+			<p> Login to your WordPress administration panel. You can simply append wp-admin to your site's url. So if your site is ABC.com , ABC.com/wp-admin is your WP Admin area.</p>
+			<img src="../assets/img/wp_admin.png" width="640" alt="wp screenshot" />
+			<div class="clear"></div>
+			<strong>Go to Apperance - Themes - Upload </strong>
+			<p> Locate the Apperance in the left menu. Click on it, locate the themes sub-menu item, click on it. Locate the Add new button on your screen. </p>
+			<img src="../assets/img/add_new_theme.png" width="640" alt="wp screenshot" />
+
+			<div class="clear"></div>
+			<strong>Upload the Theme </strong>
+			<p>Click on Upload Theme button. A Upload form will appear. Drag and drop the theme downloaded in the previous step here. Click on Install Button</p>
+			<img src="../assets/img/select_install.png" width="640" alt="wp screenshot" />
+			<div class="clear"></div>
+			<p>If you see the below error while uploading the theme, it most likely means that your server is restricting the upload.</p>
+			<img src="../assets/img/WordPress-Link-Expiration.png" width="640" alt="wp screenshot"  />
+			<p>The possible reasons for above are :</p>
+			
+			<p>The best course of action</p>
+			<hr>
+			<h2 id="plugins">Installing Plugins</h2>
+			<hr>
+			<h2 id="sample_data">Installing Sample Data</h2>
+			<hr>
+			<h2 id="video">Video Walkthrough</h2>
+			<hr>
+			<h2 id="faqs">FAQs</h2>
+
+			
+
+			<div class="columns">
+				<div class="message info">
+					<span class="vicon vicon-info">
+					</span>
+					<span>
+						<strong>Information Block</strong>
+						<span>Useful information regarding a content block.</span>
+					</span>
+				</div>
+				<div class="message warning">
+					<span class="vicon vicon-bell">
+					</span>
+					<span>
+						<strong>Warning Block</strong>
+						<span>Things of importance. Place where user can make a mistake.</span>
+					</span>
+				</div>
+				<div class="message error">
+					<span class="vicon vicon-alert">
+					</span>
+					<span>
+						<strong>Error Block</strong>
+						<span>Places where you might face an error and rectification steps.</span>
+					</span>
+				</div>
+				<div class="message help">
+					<span class="vicon vicon-help">
+					</span>
+					<span>
+						<strong>Help Block</strong>
+						<span>If you need further help, where you contact us.</span>
+					</span>
+				</div>
+			</div>
+			<div class="action_buttons">
+				<a href="../index.html" class="button-prev">&lsaquo; Back to Introduction</a>
+				<a href="../installation/index.html" class="button-next large_next_button">Proceed to Installation Document</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
