@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WPLMS v 4 Introduction</title>			
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/docs.css?2" media="all">
+<link rel="stylesheet" href="../assets/vicons.css" media="all">
+</head>
+<body>
+<span class="loader"><span></span></span>
+<div class="setup_wizard_wrapper_wrapper">
+	<div class="setup_wizard_wrapper">
+	<div class="onboarding introduction">
+		<div class="onboarding_header">
+			<span>
+				<img id="wplms_logo" class="site-logo" src="http://localhost/wplms/wp-content/themes/wplms/assets/images/logo.png" alt="wplms">
+				<span>The WordPress LMS</span>
+			</span>
+		</div>				
+		<div class="onboarding_introduction">
+			<h2>Administration Guide</h2>
+			<br>
+			<span>WPLMS version 4.</span>
+			<ul>
+				<li  class="active">Important Settings</li>
+				<li><a href="existing.html">Registration Process</a></li>
+				<li><a href="existing.html">Selling Courses & Commissions</a></li>
+				<li><a href="existing.html">Addons</a></li>
+				<li><a href="existing.html">Translation Guide</a></li>
+			</ul>
+		</div>
+		<a href="../index.html">&lsaquo; Back to main</a>
+	</div>
+	<div class="setup_wizard_main" >
+		<div class="setup_wizard_main_header">
+			<span></span>
+			<span>Having Troubles ? <a href="https://wplms.io/support">Get Help</a></span>
+		</div>
+		<div class="envato-setup-content">				
+			<h1>WPLMS Management for Administrators.</h1>
+			<p>This is the adminsitrator's guide for managing WPLMS. A lot of settings which were dependent on WordPress login status are now termed as Legacy.</p>
+			
+			<hr>
+			<h2 id="video">Video Walkthrough</h2>
+			<div class="columns">
+				<div>
+					
+					<p>Video walkthrough of how to install WPLMS verison 4on a blank WordPress site.</p>
+				</div>
+
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
+						<li><a href="#video"  class="active">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<br>
+			<h4>Video</h4>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/KTT2a-L3F8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+			<hr>
+			<h2 id="faqs">FAQs</h2>
+			<div class="columns">
+				<div>
+					
+					<p>FAQ's common mistakes which might happen during the installation.</p>
+				</div>
+
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs"   class="active">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			
+			<div class="accordions_wrapper">
+				<div class="accordion">
+					<input type="checkbox" id="faq1">
+					<label for="faq1">
+						Sliders did not install. I see a Error message on home.
+						<span></span>
+					</label>
+					<div class="description">
+						<strong>Sometimes sliders do not import.</strong>
+						<p>This happenes because sliders are bulky. They usually have size from 6-8MB and most of the time the download just does not complete. You can download the sliders from this link. </p>
+						<a href="https://wplms.io/demos/demodata/content/" target="_blank">Link to download sliders &rsaquo;</a>
+						<p>Locate your demo you were installing. Click on that folder link. Inside that folder you will find the Zip files. Upload these zip files into the respective slider [<a href="https://theme-fusion.com/documentation/avada/how-to/how-to-import-export-your-layerslider-sliders/" target="_blank">How to import LayerSlider</a> or <a href="https://theme-fusion.com/documentation/avada/how-to/how-to-export-import-your-slider-revolution-sliders/" target="_blank">How to import RevSlider</a>]</p>
+					</div>
+				</div>
+				<div class="accordion">
+					<input type="checkbox" id="faq2">
+					<label for="faq2">
+						Missing Images from Demo.
+						<span></span>
+					</label>
+					<div class="description">
+						<p>Sometimes this can happen if the image size is too large or the image is of format not supported in your WordPress site. Like Icons or WebP images. All images used in Demos are either Open to use or we have their extended license.</p>
+						<p>You can download those images from the demos directly and upload in your site.</p>
+						<a href="https://www.dummies.com/computers/operating-systems/windows-xp-vista/how-to-download-a-picture-from-a-web-page/">How to download images from a webpage.</a>
+					</div>
+				</div>
+				<div class="accordion">
+					<input type="checkbox" id="faq3">
+					<label for="faq3">
+						Menus incorrectly setup
+						<span></span>
+					</label>
+					<div class="description">
+						<p>Sometimes menus appear disordered as a lot of information is imported.</p>
+						<p>This can be easily fixed from the customizer.</p>
+						<a href="https://www.youtube.com/watch?v=JJRQ7l03nmo&list=PL8n4TGA_rwD-IdrZV4g0cEZJXgkPiX4Bu&index=4" target="_blank">Video on how to fix menus.</a>
+					</div>
+				</div>
+				<div class="accordion">
+					<input type="checkbox" id="faq4">
+					<label for="faq4">
+						Unable to edit home page with elementor.
+						<span></span>
+					</label>
+					<div class="description">
+						<p>Some of the demos are not built using elementor.</p>
+						<p>For such demos you need to import the elementor template and edit the page.</p>
+						<a href="https://www.youtube.com/watch?v=bsBC6DZg8Xg" target="_blank">Video walkthrough.</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="action_buttons">
+				<a href="../index.html" class="button-prev">&lsaquo; Back to Introduction</a>
+				<a href="../installation/index.html" class="button-next large_next_button">Proceed to Installation Document</a>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

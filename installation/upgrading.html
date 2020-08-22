@@ -43,7 +43,7 @@
 			<div class="columns">
 
 				<div><p><strong> Why 4.0 ?</strong>
-					 A Scalable & Blazing fast LMS & Community site. Which comes with its own App. A single App for Students, Instructors, Sellers, Administrators, Staff, Companies, Managers, Chairman and any other user. App which runs on Mobile, Tablet and Desktop and looks equally good.
+					 A Scalable & Blazing fast LMS & Community site, which can be ported into a mobile app. A single App for Students, Instructors, Sellers, Administrators, Staff, Companies, Managers, Chairman and any other user. App which runs on Mobile, Tablet and Desktop and looks equally good.
 				</p>
 				<p>4.0 works on a simple concept : Use more browser than the server. In short it will save you on your server expenses.</p>
 			</div>
@@ -68,212 +68,177 @@
 			<p>The 2020 is predicted is an year of Speed. The dynamics of the web has changed. There are more important terms which are missed in WordPress optimisation. A faster loading site is the best UX !</p>
 			<hr>
 			<h2 id="what_changed">What has changed in the WPLMS 4.0 ?</h2>
-			<p>There are a lof of changes in the WPLMS 4.0 framework. But we can categorise this into few broad classification.</p>
+			<p>There are a lof of changes in the WPLMS 4.0 framework. But to summarize here's a list of big impact changes.</p>
 			<div class="columns">
 				<div>
 					
 					<strong>The Login system</strong>
-					<p>WPLMS no longer uses WordPress login system. The WordPress login system is a cookie based authentication which verified by database sessions. This creates a huge lag in server response time as the number of loggedin users increased. A huge benefit in TTFB.</p>
-					<strong>Cache Ready</strong>
-					<p>The jQuery dependency has been removed. All javascript is written in plain core javascript. The benefit is that it can be easily loaded in defer mode. Big impact on page load speed.</p>
+					<p>WPLMS no longer uses WordPress login system. The WordPress login system is a cookie based authentication which verified by database sessions. The WPLMS 4.x series uses a JWT based authentication. Unlike default WordPress implementation where you'll notice a drop in server performance as the number of logged in users increased, the JWT makes sure the server performance remains same.<a href="https://wp-rocket.me/blog/difference-json-web-tokens-vs-session-cookies/" target="_blank">Learn more</a>. Any third party plugin which relied on WordPress login, would no longer work. The logins are now triggered by the browser so the server renderes a static page and javascript detects if the user is logged in to the site and then logs the user in. You may be able to observe this on page reloads at the login screen.</p>
 				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
 						<li><a href="#what_changed" class="active">What has Changed ?</a></li>
-						<li><a href="#uploading">Big</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#updating">Updating the Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
 			<br><br>
-			<strong>Page Builders for Layouts</strong>
-					<p>To create a flexible layouts and add custom information, we needed to use a flexible system for creating Course styles, profile styles and more.</p>
-			<strong>Lesser Page Loads</strong>
-				<p>Pages are loaded less and more job is done in the browser. Pages maintain internal caches in the browser.</p>
+			<strong>Merging of Core Plugins</strong>
+				<p>The core plugins Vibe Course Module, Vibe Customtypes, Vibe Shortcodes, WPLMS Dashboards, WPLMS FrontEnd, WPLMS Assignments are all merged into 1 single plugin "WPLMS Plugin" [<a href="https://prnt.sc/u3tyzc" target="_blank">screenshot</a>]. The WPLMS Plugin requires VibeBP plugin which is the web app framework for BuddyPress.</p>
+			<strong>No jQuery & Cache Ready</strong>
+					<p>The jQuery dependency has been removed. All javascript is written in plain core javascript or in ReactJS. The benefit is that it can be easily loaded in defer mode. Which has a big impact on page load speed.</p>
+			<strong>Page Builders for Profile/Course/Group/Directories Layouts</strong>
+					<p>To create a flexible layouts and add custom information, we needed to use a flexible system for creating Course styles, profile styles and more. In 3.x or below we were using hard coded templates for creating designs for profiles, directories, courses in 4.x series we have Page builders doing this. You can create unlimited layouts and set layouts on per element basis as well. Currently Elementor is supported but all content is built using shortcodes, so we can integrated with your favorite page builder in future.</p>
+			<strong>No more tabs</strong>
+				<p>The Profile Tabs are gone. The Course tabs are gone. Elements which relied on server to generate dynamic content (per course, per members) are removed. Because these pages are dynamically generated for each member, the servers can not cache these pages as static. All this information exist in the members area.</p>
+			<strong>No Course Status, No Create Course Page</strong>
+				<p>Two core settings are no longer required. The users now create and manage courses from their Profile area. As the profile area would be converted into the Web/Mobile App, this provides users a consistent experience accross mobile and web.</p>
+
+			<strong>New Members Area</strong>
+				<p>The members area which loads in the profile when you are logged in to the new WPLMS (VibeBP). It is a fully customisable area and using menus and dashboards you can load different menu items, different widgets based on user role/capabilities.</p>
+			<strong>Menus & Organisation</strong>
+				<p>The Profile navigation is now managed from WordPress Menus. No longer need any code or third party plugin.</p>
+
+			<strong>No Public Activity directory</strong>
+				<p>We feel that activities is one of the most important part of WPLMS and any community site. WPLMS uses activities for generating reports and tracking a lot of information. Making this sensitive information public is a huge drawback. So, only the administrator can load the site wide activity in his members area.</p>
 			
+			<strong>Trimming and Extending BuddyPress</strong>
+				<p>BuddyPress is "The" best membership plugin in the world. However, we felt that in some cases it went overboard in UX and in some cases it lacked. Based on our study we came out with the best possible case which can be used for education sites without any compromise on Speed. These are most notably : Static profiles for Public, Attachments in Activity, Improved Messaging, a Followers component, improved groups component and dynamic directories .</p>
+			<strong>Using Social Logins & RealTime Communication via Firebase</strong>
+				<p>There is no realtime communication inbuilt into WordPress or BuddyPress. The 4.x series comes with optional inbuilt firebase integration for Live chat, RealTime Communication and Social Logins.  So,if student is online and an Instructor adds the student in a course, he gets a real time notification. 
+				In future upgrades we'll be using firebase for background sync, push notifications and machine learning implementations as well. </p>
 			<br>
 			
 			<hr>
-			<h2 id="uploading">Uploading the theme</h2>
+			<h2 id="updating">Updating the theme</h2>
 
 			<div class="columns">
 				<div>
 					
-					<p>Uploading the WPLMS theme is just like any other theme. Following are the steps you can follow to upload the theme.<p>
-					
+					<p>To update the theme, you need an Envato / Themeforest account and a valid purchase.</p>
+					<p>Although having an active support is not required, we certainly recommend users to ensure their support is active. You can use this link to verify if your Support is still active.</p><p>You can also use WPLMS v4 theme with v3.9 plugins.</p>
+
 				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading"  class="active">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating"  class="active">Updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
-
+			<strong>Verify Active Support</strong>
+			<form method="get" action="https://wplms.io/verify-purchase/" class="validation_form">
+				<input type="text" value="" name="purchase_code" placeholder="Enter your WPLMS Purchase code" />
+				<input type="submit" class="button" value="Verify Purchase code" />
+			</form>
+			Enter your item purchase code
+					<img src="../assets/img/support_period.png" width="640" alt="themeforest screenshot" />
 			<div class="clear"></div>
-			<strong>Downloading the theme</strong>
-			<p> Download the WPLMS WordPress theme from your Themeforest Account.</p>
-			<img src="../assets/img/download_theme.png" width="640" alt="themeforest screenshot" />
+			<h4>Authenticating Update</h4>
+			<p>To Update the WPLMS theme, just go to WP admin - WPLMS (options panel) - Getting started section. Click on the large Authenticate button. If you see Re-Authenticate then also we recommend you to click on it Authenticate your purchase from Envato. You do not require active support to update the theme</p>
+			<img src="../assets/img/oncigure_updates.png" width="640" alt="themeforest screenshot" />
 			<div class="clear"></div>
-			<strong>Log in to your WordPress Admin [a.k.a WP Admin]</strong>
-			<p> Login to your WordPress administration panel. You can simply append wp-admin to your site's url. So if your site is ABC.com , ABC.com/wp-admin is your WP Admin area.</p>
-			<img src="../assets/img/wp_admin.png" width="640" alt="wp screenshot" />
-			<div class="clear"></div>
-			<strong>Go to Apperance - Themes - Upload </strong>
-			<p> Locate the Apperance in the left menu. Click on it, locate the themes sub-menu item, click on it. Locate the Add new button on your screen. </p>
-			<img src="../assets/img/add_new_theme.png" width="640" alt="wp screenshot" />
-
-			<div class="clear"></div>
-			<strong>Upload the Theme </strong>
-			<p>Click on Upload Theme button. A Upload form will appear. Drag and drop the theme downloaded in the previous step here. Click on Install Button</p>
-			<img src="../assets/img/select_install.png" width="640" alt="wp screenshot" />
-			<div class="clear"></div>
-			<p>If you see the below error while uploading the theme, it most likely means that yoursame server is restricting the upload.</p>
-			<img src="../assets/img/WordPress-Link-Expiration.png" width="640" alt="wp screenshot"  />
-			<p>The possible reasons for above are :</p>
-			<ol>
-				<li>Server Upload limit less than 8MB.</li>
-				<li>PHP Zip library not installed</li>
-				<li>File permissions incorrect.</li>
-				<li>WordPress incorrectly configured.</li>
-				<li>Previous attempt of uploading the theme failed due to network issues.</li>
-			</ol>
-			<p>The best course of action in all above cases is to contact your web host. For the last step "previous failed attempt", you can login via FTP and locate for wp-content/themes/wplms folder and remove it.</p>
-			<hr>
-			<h2 id="setup_wizard">Setup Wizard</h2>
-			<div class="columns">
-				<div>
-					
-					<p>On uploading and activating the theme, you will see a setup wizard automatically taking control of the things. This is expected and recommended method of installing the theme.<p>
-					<p>The Purpose of the setup wizard is to configure a lot of settings automatically and avoid the hassle of manually configuring the theme.</p>
-				</div>
-				<div class="reference_menu">
-					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard"  class="active">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
-						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
-						<li><a href="#video">Video Walkthrough</a></li>
-						<li><a href="#faqs">FAQs</a></li>
-					</ol>
-				</div>
-			</div>
-			<div class="clear"></div>
-			<h4>Selecting an Installation Type</h4>
-			<p>We have categorised the WPLMS theme usage into 4 broad categories : Instructor, Academy, University and MOOC (massive open online courses ). We've Demonstrated the theme into above broad categories and selected a feature set for each of these categories. However, this is just a classification factor and during the course of setup wizard you are free to enable recommended feature, designs for  the type of installation you are selecting in this step.</p>
-			<p>Even after the setup has been completed you can always re-run the setup wizard and enable disable features which you may need later on. For example : <a href="https://www.youtube.com/watch?v=kmIa8kfTxjA">Enabling BigBlueButton Meetings in existing site.</a></p>
-			<img src="../assets/img/setup_wizard.png" width="640" alt="themeforest screenshot" />
-			<br>
-			<p>You will also see configuration checks and file permission checks which indicate any potential problem theat may arise during the setup wizard. Mouse over to see more details.</p>
-			<p>It is always better to make sure there is no failed configuration and file permission checks. However, sometimes failed check in configuration can also appear if the wordpres is unable to identify them.</p>
+			<h4>Update the Theme </h4>
+			<p> Go to WP admin - Updates section. If you do not see update for the theme in theme updates section. Click on check again.</p>
+			<img src="../assets/img/update_notice.png" width="640" alt="wp screenshot" />
+			<p>Select and update the theme.</p>
 			<div class="clear"></div>
 			
-			<h4>Select a Demo Style</h4>
-			<p>If you want to install a Theme Demonstration [Demo] then click on the image to select it. When a Demo installation is selected, you will see a check mark over it. To switch to another demo click on its image select it. To see how the demo works, click on the pop-out icon and you can go through the demos. </p><p>Chosing latest demos is always a good idea as they have better design and import wizard has been tested thorroughly for the demos.</p>
-			<p>You can skip this step from the bottom skip option to not install any content or demo style.</p><p>The images in this screen require an active internet connection, if you do not see images then please check your internet connection.</p>
-			<img src="../assets/img/theme_selection.png" width="640" alt="themeforest screenshot" />
-			<p>Below the demos you will find import content section. This expects a upload file to use as a demo style. We will come back to this area in later sections.</p>
-			<div class="message help" id="import_existing_wplms_content">
-				<span class="vicon vicon-help"></span>
-			<p>If you have an existing WPLMS site or you are developing WPLMS site in your local computer. You can use the WPLMS Export wizard to take out the export zip from your site and import that zip file here.</p>
-			</div>
-			<div class="clear"></div>
-			<h4>Select Features for this Site</h4>
-			<p>In this area you select features for your site. To select a feature click on it and a check mark would appear over it. Click on it again to remove the check mark. Some of the features will come pre-selected based on the demo style you've selected in previous step.</p>
-			<img src="../assets/img/wplms_features.png" width="640" alt="themeforest screenshot" />
 			<hr>
-			<hr>
-			<h2 id="authenticate">Authenticate and setup updates</h2>
+			<h2 id="setting_up">Setting Up Plugins</h2>
 			<div class="columns">
 				<div>
 					
-					<p>Authenticate your purchase by either authenticating from Envato account or by entering purchase code.<p>
-					<p>Authenticating with Envato account also sets up  the theme for auto-updates. Otherwise you can authenticate again from WP admin - WPLMS - Getting started section.</p>
+					<p>On activating the verison 4 of the theme. you will land on the about page of the theme.</p>
+					<div class="warning message">
+						<span class="vicon vicon-alert"></span>
+						<span>
+							<strong>Do not ignore the big red button.</strong>
+							<p>To install the plugins in version 4 you need to add your item purchase code or authenticate in the Setup Wizard.</p>
+
+						</span>
+					</div>
 				</div>
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate" class="active">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">Updating Theme</a></li>
+						<li><a href="#setting_up"  class="active">Setting Up Plugins</a></li>
 						<li><a href="#plugins">Install Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
-			<p>This is also required to download the plugins in the next step. Hence you will not be able to skip this step and proceed to the next step in installation.</p>
-			<img src="../assets/img/auth.png" width="640" alt="themeforest screenshot" />
-			<div class="message info">
-				<span class="vicon vicon-info"></span>
-				<p><strong>Item Purchase code.</strong></p>
-				<p>How to locate your item purchase code : <a href="https://wplms.io/support/knowledge-base/how-to-find-wplms-theme-purchase-code/" target="_blank">Link</a></p>
-			</div>
+			<p>Click on the big red button in the WPLMS About section. You'll not be able to install any WPLMS v4 plugins without entering the purchase code in the big red button. All plugins in WP admin - Appearance - Install Plugins will show failed to install message in the next step. [<a href="../assets/img/error_plugin_install.png" target="_blank">screenshot</a>]</p>
+
+			<img src="../assets/img/updates.png" width="640" alt="themeforest screenshot" />
+			<p>On clicking the big red button you will land on the Setup Wizard - Configure updates screen. Enter your item purchase code there and submit the form. Post submit you will see the link to go back to the About WPLMS screen.</p>
+			
 			<hr>
 			<h2 id="plugins">Installing Plugins</h2>
 			<div class="columns">
 				<div>
 					
-					<p>The theme comes with required and recommended set of plugins.Note that recommendations are good to have but not absolute necessity for the theme to work.<p>
-					<p>The required plugins for the theme to work as advertised are BuddyPress , WPLMS and VibeBP.</p>
+					<p>To install the required and recommended plugins simply click on the notification in your WP admin screen.</p>
+					<p>You can now install the plugins from the install plugin notice.</p>
+					<p>Installing the plugins would activate the WPLMS v4 in your site.</p>
 				</div>
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">Updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins" class="active">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
-			<p>Based on your selection of previous "Features" step you will see the install plugins options here. Note that this is a sub-set of recommended plugins. Post installation you can view the complete set of recommended plugins from WP admi - Appearance - Install plugins section.</p>
+			<br>
+			<p>This notice will appear on upgrading theme to version 4</p>
+			<img src="../assets/img/install_plugin_notice.png" width="640" />
+			<p>Clicking on install plugins you will land on the install plugins screen. You can then install the plugins.</p>
+			<img src="../assets/img/install_new_plugins.png" width="640" />
 
-			<img src="../assets/img/install_plugins.png" width="640" alt="themeforest screenshot" />
-			<p>You need an active internet connection to download these plugins. The plugins are hosted on Amazon servers and they are always available on the internet.</p>
 			<div class="columns">
-				<div class="message info">
-					<span class="vicon vicon-info"></span>
-					<div>
-					<p><strong>Ajax Error while installing plugins.</strong></p>
-					<p>You may see some plugins returning status of ajax error. Such messages are safe to ignore as the plugin is trying to take you away from the installation wizard and we stop it from doing so.</p>
-					</div>
-				</div>
-				<div class="message error">
+				<span><p>If you missed out on the step to authenticate in the WPLMS About section you will not be able to install the plugins here.</p>
+				<p>Another case when plugins may not get installed is because of network connectivity. Your server unable to connect with Amazon server for plugin downloads.</p></span>
+				<div class="message warning">
 					<span class="vicon vicon-alert"></span>
-					<div>
-						<strong>Failed Plugins.</strong>
-						<span>In case you see a failed error message, this means the plugin installation failed. It means the the rest of the setup process may face further issues. In such cases if the plugin is not a required plugin [BuddyPress, WPLMS & VibeBP] you can still proceed with the installation. If it is a required plugin then download the plugin manually and install it from the WP admin - Plugins add new screen.</span>
-					</div>
+					<span>
+						<strong>Page reloaded, plugins not installed !</strong>
+						If even after page reloads the install plugins fail.
+						Check the direct links for the plugins which you can manually download and install.
+						<a href="#direct_download_links">Direct download links</a>
+					</span>
 				</div>
+				
 			</div>
 			<br>
 			<p>In case you see failed error messages, you can follow these direct links for plugin downloads for required plugins : </p>
-			<ol>
+			<ol id="direct_download_links">
 				<li>BuddyPress : <a href="https://downloads.wordpress.org/plugin/buddypress.6.2.0.zip">Download link</a></li>
 				<li>WPLMS : https://wplms.io/verify-purchase/?purchase_code=XXX&plugin=wplms.io/wplms_plugin.zip</li>
 				<li>VibeBP : https://wplms.io/verify-purchase/?purchase_code=XXX&plugin=wplms.io/vibebp.zip</li>
@@ -288,81 +253,110 @@
 			</ol>
 			<p>Copy and paste above links in the browser after replacing XXX with the WPLMS purchase code and you will be able to download the plugin files. You'll need to upload at WP dmin - plugins - add new and activate. Once the install and activation of the plugins is complete. Reload this page and you will see the updated status of the plugins.</p>
 			<hr>
-			<h2 id="required_pages">Required Pages</h2>
+			<h2 id="migrate_notice">Migrate to 4.0 Notice</h2>
 
 			<div class="columns">
 				<div>
 					
-					<p>This step setups up various pages and layouts in the theme. This is one of the required steps we advise everyone to follow even if you are not installing any demo content.<p>
-					<p>If the pages are already installed you will see the checks in green color. On fresh installation they'll appear as faded.</p>
-					
+					<p>Once the plugins are active you will see a migrate notice in your site.</p>
+					<p>The migrate notice requires you to deactivate the plugins which were used in the 3.x versions. This is a mandatory step.</p>
+					<div class="message warning">
+						<span class="vicon vicon-alert"></span>
+						<span>
+							<strong>Click the Notice button to deactivate the plugins</strong>
+							<p>The plugins need to be deactivated in bulk. Clicking on the button deactivates all the plugins at once. Deactivating plugins one by one from the WP admin - plugins section can cause issues.</p>
+						</span>
+					</div>
 				</div>
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages"  class="active">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data" >Installing Sample Data</a></li>
+						<li><a href="#migrate_notice"  class="active">Migrate Notice</a></li>
+						<li><a href="#sample_data" >Installing Sample Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
-				</div>
-			</div>
-			<img src="../assets/img/required.png" width="640" alt="themeforest screenshot" />
-			<hr>
-			<h2 id="sample_data">Installing Sample Data</h2>
-
-			<div class="columns">
-				<div>
-					
-					<p>The most important step for installing demo content.<p>
-					<p>We advise to install all content for a fresh WordPress setup to avoid any issues and output look similar to the demo.</p>
-					<p>You will see many sections to import and this is a time consuming process. Content is downloaded from the demo and from our Amazon servers and imported in your site.</p>
-				</div>
-
-				<div class="reference_menu">
-					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
-						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data"  class="active">Installing Sample Data</a></li>
-						<li><a href="#video">Video Walkthrough</a></li>
-						<li><a href="#faqs">FAQs</a></li>
-					</ol>
-				</div>
-			</div>
-			<p>This is how the import content screen looks like.</p>
-			<img src="../assets/img/demo_content.png" width="640" alt="themeforest screenshot" />
-			<p>If your screen does not appear like this and there is an error in red. It means that your server was unable to load the demo content file which is uploaded in our Amazon servers.</p>
-			<p>This could be a temporary network issue and you can reload this page to load the data. Or try after few minutes to reload this page and load the data. In case the issue persists, the only alternative to this situation is to upload the content manually.</p>
-			<div class="columns">
-				<div>
-					<strong>Export package download links</strong>
-					<ol>
-						<li>Academy Demo : <a href="https://demos.wplms.io/academy/wp-content/uploads/export_demos/academy.zip">Download link</a></li>
-						<li>V4 Base Demo : <a href="https://demos.wplms.io/wp-content/uploads/export_demos/demo1.zip">Download link</a></li>
-						<li>Demo 10 : <a href="https://demos.wplms.io/demos/demo10/wp-content/uploads/export_demos/demo10.zip">Download link</a></li>
-						<li>Demo 6 : <a href="https://demos.wplms.io/demos/demo6/wp-content/uploads/export_demos/demo6.zip">Download link</a></li>
-						<li>Demo 14 : <a href="">Download link</a></li>
-						<li>Demo 1 : <a href="https://demos.wplms.io/demos/demo1/wp-content/uploads/export_demos/Demo1.zip">Download link</a></li>
-					</ol>
-				</div>
-				<div class="message warning"><span class="vicon vicon-alert"></span>
-					<span>
-				<p>Unable to see "Posts","Pages" in import content. You need to download the Zip files of our demos from below links and go back to step 1 "Select a demo style", click on this step on the left menu and upload the downloaded zip file from below links.</p>
-				
-				<a href="">Video walkthrough &rsaquo;</a></span>
 				</div>
 			</div>
 			<br>
-			<p>If you are unable to download the slider, check FAQ section for direct link for sliders.</p>
+			<p>Click on the "Deactivate plugins" button in this notice.</p>
+			<img src="../assets/img/migrate_notice.png" width="640" alt="themeforest screenshot" />
+			<p>Post deactivation you can verify the plugins are deactivated from the WP admin - Plugins screen.</p>
+			<img src="../assets/img/deactivated_plugins.png" width="640" alt="themeforest screenshot" />
+			<div class="message error">
+				<span class="vicon vicon-alert"></span>
+				<span>
+					<strong>If you see a White Screen or Fatal Error !</strong>
+					<span>If due to some reason the plugin deactivation failed. You will need to deactivate the plugins manually. <a href="http://vibethemes.com/deactivate-plugin-without-accessing-wp-adm/" target="_blank">Link</a></span>
+				</span>
+			</div>
+			<p>The plugins Vibe course module, Vibe Customtypes, Vibe shortcodes, WPLMS Assignments, WPLMS Dashboard, WPLMS EventOn, WPLMS Front end plugins should be deactivated.</p>
+
+			<h4>Migrate Theme framework to 4.0</h4>
+			<p>Once the above plugins are deactivated you will get the notification to migrate the fraemwork to 4.0. This is a very important step as it activates 4.0 features in the theme.</p>
+			<img src="../assets/img/switch_4_0.png" width="640" alt="themeforest screenshot" />
+
+			<p>From here onwards your login system is now upgraded to 4.0. All the modules now start detecting this switch. The notice will stay on your site and asking you for confirmation. Once satisfied you and confirm and remove the notice forever.</p>
+			<hr>
+			<h2 id="sample_data">Installing Sample Layouts</h2>
+
+			<div class="columns">
+				<div>
+					
+					<p>Post migration you would want to install Sample layouts for your courses, profiles and directories.</p>
+					<p>You can either use the VibeBP importer to import sample layouts from any demo.</p>
+					<p>To import from any demo, restart the setup wizard and go to Content step to import the layouts.</p>
+				</div>
+
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data"  class="active">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
+						<li><a href="#video">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p>Select the demo whose Profile/Course layouts you want to install. Skip all the remaining steps and reach the Import content step.  Here only select the Profile layotus, Course layouts, Member card, Course card and import.</p>
+			<img src="../assets/img/demo_content.png" width="640" alt="themeforest screenshot" />
+			
+			<br>
+			<hr>
+			<h2 id="customizer">Switching Layouts and Remaining settings</h2>
+			<div class="columns">
+				<div>
+					<p>The last step is to switch to new layouts.</p>
+					<p>The most important layout is the profile layout which activates the members area in your site.</p>
+					<p>Go to Customizer - Layouts and select the blank layouts for Profile/Course/Directory</p>
+				</div>
+
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
+						<li><a href="#plugins">Installing Plugins</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
+						<li><a href="#video"  class="active">Video Walkthrough</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<img src="../assets/img/blank_layout.png" width="640" alt="themeforest screenshot" />
+			<p>Learn more about how to edit these layouts in the Administrator guide.</p>
+			<br>
 			<hr>
 			<h2 id="video">Video Walkthrough</h2>
 			<div class="columns">
@@ -373,13 +367,13 @@
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video"  class="active">Video Walkthrough</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
@@ -399,13 +393,13 @@
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#hosting_requirements">Hosting Requirements & Recommendations</a></li>
-						<li><a href="#uploading">Uploading Theme</a></li>
-						<li><a href="#setup_wizard">Setup Wizard</a></li>
-						<li><a href="#authenticate">Authenticate</a></li>
+						<li><a href="#what_changed">What has Changed ?</a></li>
+						<li><a href="#updating">updating Theme</a></li>
+						<li><a href="#setting_up">Setting Up Plugins</a></li>
+						
 						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#required_pages">Required Pages/Layouts</a></li>
-						<li><a href="#sample_data">Installing Sample Data</a></li>
+						<li><a href="#migrate_notice">Migrate Notice</a></li>
+						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
 						<li><a href="#video">Video Walkthrough</a></li>
 						<li><a href="#faqs"   class="active">FAQs</a></li>
 					</ol>
@@ -466,7 +460,7 @@
 
 			<div class="action_buttons">
 				<a href="../index.html" class="button-prev">&lsaquo; Back to Introduction</a>
-				<a href="../installation/index.html" class="button-next large_next_button">Proceed to Installation Document</a>
+				<a href="../administration/index.html" class="button-next large_next_button">Proceed to Administration Document</a>
 			</div>
 		</div>
 	</div>

@@ -1064,6 +1064,21 @@ form input[type="text"] {
 .introduction .button_highlight {
   margin: 3rem 0; }
 
+.validation_form {
+  display: flex;
+  align-items: center;
+  margin: 10px -5px; }
+  .validation_form > * {
+    margin: 0 5px !important; }
+  .validation_form input {
+    height: 48px;
+    padding: 10px; }
+  .validation_form .button {
+    color: #fff;
+    background: #2B6CF6;
+    border: none;
+    border-radius: 5px; }
+
 ol, ul {
   padding-left: 1.2rem;
   line-height: 1.2rem;
