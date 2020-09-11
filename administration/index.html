@@ -24,9 +24,9 @@
 			<br>
 			<span>WPLMS version 4.</span>
 			<ul>
-				<li  class="active">Important Settings</li>
-				<li><a href="existing.html">Registration & Logins</a></li>
-				<li><a href="existing.html">Sales & Commissions</a></li>
+				<li  class="active">Setting Up WPLMS</li>
+				<li><a href="registrations.html">Registration & Logins</a></li>
+				<li><a href="existing.html">Instructors & Commissions</a></li>
 				<li><a href="existing.html">Extending & Addons</a></li>
 				<li><a href="existing.html">Translation Guide</a></li>
 			</ul>
@@ -40,109 +40,194 @@
 		</div>
 		<div class="envato-setup-content">				
 			<h1>WPLMS Management for Administrators.</h1>
-			<p>This is the adminsitrator's guide for managing WPLMS. A lot of settings which were dependent on WordPress login status are now termed as Legacy.</p>
+			<p>This is the adminstrator's guide for managing WPLMS. This guide deals in how things are setup and managed in the WPLMS.</p>
 			
 			<hr>
-			<h2 id="video">Video Walkthrough</h2>
+			<h2 id="required_configuration">Important Settings in the version 4</h2>
 			<div class="columns">
 				<div>
-					
-					<p>Video walkthrough of how to install WPLMS verison 4on a blank WordPress site.</p>
-				</div>
+					<p>The WPLMS Version 4 is very different from its predecessor version 3. Following plugins must be active in order to use WPLMS :  <strong>BuddyPress, VibeBP and WPLMS Plugin</strong> </p>
+					<p>Recommended plugins include : WPLMS PDF Certficates, Vibe Drive and Vibe HelpDesk.</p><p>For Selling courses : WooCommerce [Sell courses one by one], PaidMemberShips Pro aka PMPRO ( for selling courses via memberships )</p>
 
+				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#what_changed">What has Changed ?</a></li>
-						<li><a href="#updating">updating Theme</a></li>
-						<li><a href="#setting_up">Setting Up Plugins</a></li>
-						
-						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#migrate_notice">Migrate Notice</a></li>
-						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
-						<li><a href="#video"  class="active">Video Walkthrough</a></li>
+						<li><a href="#required_configuration" class="active">Important Settings</a></li>
+						<li><a href="#buddypress_settings">Configuring BuddyPress</a></li>
+						<li><a href="#uploading">Profile & Loggedin Menu</a></li>
+						<li><a href="#setup_wizard">BuddyPress Refresh Navigation</a></li>
+						<li><a href="#authenticate">Configuring Firebase</a></li>
+						<li><a href="#plugins">Configuring Emails</a></li>
+						<li><a href="#required_pages">WooCommerce</a></li>
+						<li><a href="#sample_data">Service Workers & Background Sync</a></li>
+						<li><a href="#video">PWA & Converting into App</a></li>
 						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
-			<br>
-			<h4>Video</h4>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/KTT2a-L3F8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<p> Here is a list of important settings that should always be configured in your WPLMS Setup.</p>
 
+			<h3>A. Setup Purchase Code</h3>
+			<div class="columns">
+			<div><p>To update the core plugins you are required to setup auto-updates. You need to go to WP admin - Dashboard - About WPLMS section and make sure there is no big red button asking you to add purchase code.</p>
+			</div><div>
+				<img src="../assets/img/updates.png" style="width:100%;" />
+			</div>
+			</div>
+			<p>If you see this screen in the WP admin - About WPLMS section. It means your plugins are not configured for auto-matic updates. Please click on the above button and follow the guide.</p>
+			<strong>Video WalkThrough</strong>
+			<img src="../assets/img/activate_updates.gif" style="width:100%;" />
+			<br>
+			<div class="columns">
+				<div>
+				<p>The version 4 is a new version and we are fixing and releasing updates very frequently. Make sure you keep the theme and the plugins always up to date. To avoid frustrations that you may encounter because of outdated plugins.</p>
+				</div>
+				<div class="message info">
+					<span class="vicon vicon-info"></span>
+					<span>
+					<p>During the course of updating it is possible that the updating fails. In that case simply try the update again by opening WP admin - Dashboard - Updates.
+					</p>
+					<img src="../assets/img/download_failed.png" style="width:100%" />
+				</div>
+			</div>
+			<br><br>
+			<h3>B. Configure Login</h3>
+			<div class="columns">
+				<div>
+			<p>The version 4 the login script is not loaded by default on the entire site. It is loaded when you enable the setting WP admin - VibeBP - Global Login. Also as this is a front end login system, you need to enable the WP Login sync as well for vibebp to recognise WP logged in users.</p>
+			<p>The Login customisation options in Customizer - Header - Login options would no longer work</p>
+			<p><strong>The social logins are now integrated with Firebase. As WPLMS v4 uses a JWT login system, it is much different than existing logins.</strong></p>
+			<a href="" target="_blank">Learn how to configure social logins.</a>
+			</div><div>
+			<img src="../assets/img/global_login.png" style="width:100%" />
+			</div>
+			</div>
+			<h4>The login popup</h4>
+			<p>There are a lot of messages that appear in the login popup which can be configured from WP Admin - Vibebp - Settings. You can also add logging in checkbox and registration checkbox.</p>
+			<br>
+			<h3>C. Profile Layout</h3>
+			<p>The Profile layouts in WPLMS v4 are built using Elementor. In previous versions the profile pages were static hard coded templates but the v4 comes with the flexibility of </p>
+			<hr>
+			<hr>
+			<h2 id="buddypress_settings">Configuring </h2>
+			<div class="columns">
+				<div>
+					<p>The WPLMS Version 4 is very different from its predecessor version 3. Here is a list of important settings that should always be configured in your WPLMS Setup.</p>
+					<p>Following plugins must be active in order to use WPLMS :  <strong>BuddyPress, VibeBP and WPLMS Plugin</strong> </p>
+					<p>Recommended plugins include : WPLMS PDF Certficates, Vibe Drive, Vibe Zoom, Vibe</p>
+					<p>Recommended Plugins for Selling courses : WooCommerce [Sell courses one by one], PaidMemberShips Pro aka PMPRO ( for selling courses via memberships )</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#required_configuration" class="active">Important Settings</a></li>
+						<li><a href="#buddypress_settings">Configuring BuddyPress</a></li>
+						<li><a href="#uploading">Profile & Loggedin Menu</a></li>
+						<li><a href="#setup_wizard">BuddyPress Refresh Navigation</a></li>
+						<li><a href="#authenticate">Configuring Firebase</a></li>
+						<li><a href="#plugins">Configuring Emails</a></li>
+						<li><a href="#required_pages">WooCommerce</a></li>
+						<li><a href="#sample_data">Service Workers & Background Sync</a></li>
+						<li><a href="#video">PWA & Converting into App</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			
 			<hr>
 			<h2 id="faqs">FAQs</h2>
 			<div class="columns">
 				<div>
 					
-					<p>FAQ's common mistakes which might happen during the installation.</p>
+					<p>FAQ's common mistakes which might happen during the administration.</p>
 				</div>
 
 				<div class="reference_menu">
 					<ol class="main_list">
-						<li><a href="#what_changed">What has Changed ?</a></li>
-						<li><a href="#updating">updating Theme</a></li>
-						<li><a href="#setting_up">Setting Up Plugins</a></li>
-						
-						<li><a href="#plugins">Installing Plugins</a></li>
-						<li><a href="#migrate_notice">Migrate Notice</a></li>
-						<li><a href="#sample_data">Installing Sample Layouts</a></li><li><a href="#customizer">Switching to 4.0 Layouts</a></li>
-						<li><a href="#video">Video Walkthrough</a></li>
-						<li><a href="#faqs"   class="active">FAQs</a></li>
+						<li><a href="#required_configuration" class="active">Important Settings</a></li>
+						<li><a href="#buddypress_settings">Configuring BuddyPress</a></li>
+						<li><a href="#uploading">Profile & Loggedin Menu</a></li>
+						<li><a href="#setup_wizard">BuddyPress Refresh Navigation</a></li>
+						<li><a href="#authenticate">Configuring Firebase</a></li>
+						<li><a href="#plugins">Configuring Emails</a></li>
+						<li><a href="#required_pages">WooCommerce</a></li>
+						<li><a href="#sample_data">Service Workers & Background Sync</a></li>
+						<li><a href="#video">PWA & Converting into App</a></li>
+						<li><a href="#faqs">FAQs</a></li>
 					</ol>
 				</div>
 			</div>
 			
 			<div class="accordions_wrapper">
 				<div class="accordion">
-					<input type="checkbox" id="faq1">
-					<label for="faq1">
-						Sliders did not install. I see a Error message on home.
+					<input type="checkbox" id="faq001">
+					<label for="faq001">
+						User purchasing the Course but not enrolled
 						<span></span>
 					</label>
 					<div class="description">
-						<strong>Sometimes sliders do not import.</strong>
-						<p>This happenes because sliders are bulky. They usually have size from 6-8MB and most of the time the download just does not complete. You can download the sliders from this link. </p>
-						<a href="https://wplms.io/demos/demodata/content/" target="_blank">Link to download sliders &rsaquo;</a>
-						<p>Locate your demo you were installing. Click on that folder link. Inside that folder you will find the Zip files. Upload these zip files into the respective slider [<a href="https://theme-fusion.com/documentation/avada/how-to/how-to-import-export-your-layerslider-sliders/" target="_blank">How to import LayerSlider</a> or <a href="https://theme-fusion.com/documentation/avada/how-to/how-to-export-import-your-slider-revolution-sliders/" target="_blank">How to import RevSlider</a>]</p>
+						<strong>User purchased the course but does not get enrolled in the course</strong>
+						<p>This happens because of following reasons : </p>
+						<ol>
+							<li><strong>Order InComplete</strong> <p>Whenever a user purchases a course, a corresponding order is created in WooCommerce / Pmpro / EDD or any other plugin and unless that order is marked as complete by the respective plugin the WPLMS will not assign the user to the course. 
+							</p>
+
+								<div class="message info">
+									<strong>This is a very common issue in WooCommerce.</strong> <p>However, installing <a href="https://wordpress.org/plugins/autocomplete-woocommerce-orders/">this plugin</a> resolves this issue.</p><p>After installing you need to configure the above plugin in </p>
+									<img src="../assets/img/woocommerce_autocomplete.png" style="max-width:100%;width:640px;" />
+									<img src="../assets/img/autocomplete_settings.png" style="max-width:100%;width:640px;" />
+								</div>
+							</li>
+							<li>
+								<strong>Course not connected</strong><p>The user purchased a product which does not have the course connected. The products which have course connected appear like :</p>
+								<img src="../assets/img/course_product.png" style="max-width:100%;width:640px;" />
+								<p>And the order created appears like </p>
+							</li>
+						</ol>
 					</div>
 				</div>
 				<div class="accordion">
-					<input type="checkbox" id="faq2">
-					<label for="faq2">
-						Missing Images from Demo.
+					<input type="checkbox" id="faq001-2">
+					<label for="faq001-2">
+						Course in Order shows Waiting for Admin approval
 						<span></span>
 					</label>
 					<div class="description">
-						<p>Sometimes this can happen if the image size is too large or the image is of format not supported in your WordPress site. Like Icons or WebP images. All images used in Demos are either Open to use or we have their extended license.</p>
-						<p>You can download those images from the demos directly and upload in your site.</p>
-						<a href="https://www.dummies.com/computers/operating-systems/windows-xp-vista/how-to-download-a-picture-from-a-web-page/">How to download images from a webpage.</a>
+						<p>Order was not marked complete by WooCommerce. Verify the order at WP admin - WooCommerce - orders .</p>
+						<p>As a quick fix, just mark this order complete.</p>
+						<img src="../assets/img/incomplete_orders.png" style="max-width:100%;width:640px;" />
+						<strong>This is a very common issue in WooCommerce.</strong> <p>However, installing <a href="https://wordpress.org/plugins/autocomplete-woocommerce-orders/">this plugin</a> resolves this issue.</p><p>After installing you need to configure the above plugin in </p>
+						<img src="../assets/img/woocommerce_autocomplete.png" style="max-width:100%;width:640px;" />
+						<img src="../assets/img/autocomplete_settings.png" style="max-width:100%;width:640px;" />
 					</div>
 				</div>
+
 				<div class="accordion">
-					<input type="checkbox" id="faq3">
-					<label for="faq3">
-						Menus incorrectly setup
+					<input type="checkbox" id="faq003">
+					<label for="faq003">
+						Imported Profile layout messed up
 						<span></span>
 					</label>
 					<div class="description">
-						<p>Sometimes menus appear disordered as a lot of information is imported.</p>
-						<p>This can be easily fixed from the customizer.</p>
-						<a href="https://www.youtube.com/watch?v=JJRQ7l03nmo&list=PL8n4TGA_rwD-IdrZV4g0cEZJXgkPiX4Bu&index=4" target="_blank">Video on how to fix menus.</a>
+						<p>Sometimes during import this happens. Edit the profile layout templete in WP admin - Vibebp - Profile Layouts and edit ii with elementor</p>
+						<img src="../assets/img/incomplete_orders.png" style="max-width:100%;width:640px;" />
+						<strong>This is a very common issue in WooCommerce.</strong> <p>However, installing <a href="https://wordpress.org/plugins/autocomplete-woocommerce-orders/">this plugin</a> resolves this issue.</p><p>After installing you need to configure the above plugin in </p>
+						<img src="../assets/img/woocommerce_autocomplete.png" style="max-width:100%;width:640px;" />
+						<img src="../assets/img/autocomplete_settings.png" style="max-width:100%;width:640px;" />
 					</div>
 				</div>
+				https://prnt.sc/u8qnfv
 				<div class="accordion">
-					<input type="checkbox" id="faq4">
-					<label for="faq4">
-						Unable to edit home page with elementor.
+					<input type="checkbox" id="faq002">
+					<label for="faq002">
+						Course Price not set/saved in Course creation
 						<span></span>
 					</label>
 					<div class="description">
-						<p>Some of the demos are not built using elementor.</p>
-						<p>For such demos you need to import the elementor template and edit the page.</p>
-						<a href="https://www.youtube.com/watch?v=bsBC6DZg8Xg" target="_blank">Video walkthrough.</a>
+						<strong>Course price does not get set during course creation.</strong>
+						<p>The Course product captures values from the course to create the product in the WooCommerce. This means it needs Coruse title and Course full description to create a product. </p><p>Always make sure that you have course title and course full description set for a course to be able to create its pricing.</p>
 					</div>
 				</div>
 			</div>
-
 			<div class="action_buttons">
 				<a href="../index.html" class="button-prev">&lsaquo; Back to Introduction</a>
 				<a href="../instructor/index.html" class="button-next large_next_button">Proceed to Instructor Document</a>
