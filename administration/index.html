@@ -24,11 +24,12 @@
 			<br>
 			<span>WPLMS version 4.</span>
 			<ul>
-				<li  class="active">Setting Up WPLMS</li>
+				<li  class="active">Setting Up WPLMS v4</li>
 				<li><a href="registrations.html">Registration & Logins</a></li>
 				<li><a href="existing.html">Instructors & Commissions</a></li>
 				<li><a href="existing.html">Extending & Addons</a></li>
 				<li><a href="existing.html">Translation Guide</a></li>
+				<li><a href="faq.html">FAQs</a></li>
 			</ul>
 		</div>
 		<a href="../index.html">&lsaquo; Back to main</a>
@@ -47,8 +48,7 @@
 			<div class="columns">
 				<div>
 					<p>The WPLMS Version 4 is very different from its predecessor version 3. Following plugins must be active in order to use WPLMS :  <strong>BuddyPress, VibeBP and WPLMS Plugin</strong> </p>
-					<p>Recommended plugins include : WPLMS PDF Certficates, Vibe Drive and Vibe HelpDesk.</p><p>For Selling courses : WooCommerce [Sell courses one by one], PaidMemberShips Pro aka PMPRO ( for selling courses via memberships )</p>
-
+					<p><strong>Recommended plugins include :</strong> WPLMS PDF Certficates, Vibe Drive, Vibe Zoom, Vibe BBB, Vibe Calendar and Vibe HelpDesk.</p><p>For Selling courses : WooCommerce [Sell courses one by one], PaidMemberShips Pro PMPRO.</p>
 				</div>
 				<div class="reference_menu">
 					<ol class="main_list">
@@ -65,49 +65,166 @@
 					</ol>
 				</div>
 			</div>
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<span>Some of the recommended plugins which really extend the functionality of WPLMS include.  Batches/Classes, Vibe Appointments, Parent User, Unit Timings, VideoVibe, Learning Paths.</span>
+			</div>
 			<p> Here is a list of important settings that should always be configured in your WPLMS Setup.</p>
 
-			<h3>A. Setup Purchase Code</h3>
+			<h3 style="font-size:2rem;">A. Setup Purchase Code</h3>
 			<div class="columns">
 			<div><p>To update the core plugins you are required to setup auto-updates. You need to go to WP admin - Dashboard - About WPLMS section and make sure there is no big red button asking you to add purchase code.</p>
+				<p>If tou see this then it means that your site is not configured for automatic updates of the free plugins included in the pack.</p>
 			</div><div>
 				<img src="../assets/img/updates.png" style="width:100%;" />
 			</div>
 			</div>
-			<p>If you see this screen in the WP admin - About WPLMS section. It means your plugins are not configured for auto-matic updates. Please click on the above button and follow the guide.</p>
+			<p>It means your plugins are not configured for auto-matic updates. Please click on the above button and follow the guide.</p>
 			<strong>Video WalkThrough</strong>
 			<img src="../assets/img/activate_updates.gif" style="width:100%;" />
-			<br>
+			<hr>
 			<div class="columns">
 				<div>
-				<p>The version 4 is a new version and we are fixing and releasing updates very frequently. Make sure you keep the theme and the plugins always up to date. To avoid frustrations that you may encounter because of outdated plugins.</p>
+				<p>As a rule of thimb we strongly recommend you to keep the theme and the plugins always up to date. </p><p>However during the course of updating the plugins it might happen that the plugins fail to download.</p><p>If nothing works, you can download the plugins via <a href="../installation/index.html#plugins">direct link shared here</a> and install them from the WordPress Administration area - Plugins - Add new section.</p>
 				</div>
 				<div class="message info">
 					<span class="vicon vicon-info"></span>
 					<span>
 					<p>During the course of updating it is possible that the updating fails. In that case simply try the update again by opening WP admin - Dashboard - Updates.
 					</p>
-					<img src="../assets/img/download_failed.png" style="width:100%" />
+					<a href="../assets/img/download_failed.png" target="_blank"><img src="../assets/img/download_failed.png" style="width:100%" /></a>
 				</div>
 			</div>
 			<br><br>
-			<h3>B. Configure Login</h3>
+			<h3 style="font-size:2rem;">B. Configure Login & Registration</h3>
 			<div class="columns">
 				<div>
 			<p>The version 4 the login script is not loaded by default on the entire site. It is loaded when you enable the setting WP admin - VibeBP - Global Login. Also as this is a front end login system, you need to enable the WP Login sync as well for vibebp to recognise WP logged in users.</p>
 			<p>The Login customisation options in Customizer - Header - Login options would no longer work</p>
 			<p><strong>The social logins are now integrated with Firebase. As WPLMS v4 uses a JWT login system, it is much different than existing logins.</strong></p>
-			<a href="" target="_blank">Learn how to configure social logins.</a>
+			
+			<div class="videoWrapper">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/0h3oECa2JMg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<a href="https://www.youtube.com/watch?v=0h3oECa2JMg&t=4s" target="_blank">Youtube video link.</a>
 			</div><div>
-			<img src="../assets/img/global_login.png" style="width:100%" />
+			<a href="../assets/img/global_login.png" target="_blank"><img src="../assets/img/global_login.png" style="width:100%" /></a>
 			</div>
 			</div>
-			<h4>The login popup</h4>
-			<p>There are a lot of messages that appear in the login popup which can be configured from WP Admin - Vibebp - Settings. You can also add logging in checkbox and registration checkbox.</p>
+			
+			<strong>Why Firebase ?</strong>
+			<p>We wanted the system to remain fast and not use server for social login integrations. For example : if 20 users use Facebook login in your site at the same time, your server ( a single cpu) would have immense amount of work to do as it would make a hit to facebook and send in credentials  validate for all 20 users. Also maintain other tasks going on in the site. A browser only system would have 20 CPU's to make the hit and only make the hit to the server for registration.</p>
+			<p>
+				The server would only authenticate with firebase and firebase takes care of the rest of the integrations. 
+			 Firebase is free, it provides the gold standard on how scalable login systems should be built. Now, when building a login system it is going to be pain point and a vulnerability here means we are sacricing overall security of the platform. Hence, we brought in firebase.</p>
+
+ 			 <img src="../assets/img/firebase_auth.png" style="width:100%" />
+ 			 <p>The firebase takes care of integrating with social login without putting any stress on your server. Our server just maintains integration with firebase. The firebase requests are validated by public keys which the WPLMS site fetches from firebase every 15 minutes interval. </p>
+			<strong>I liked v3 Login, can i revert ? Can I use third party plugin like Digits ?</strong>
+			<p>We get this question a lot. Even though you lose out on tons of great options and sacrifice a lot on speed and even though I strongly recommend against this. Yes, you can still use old login system with WP login sync enabled in the WP admin - Vibebp - settings.</p>
+			<div class="message warning">
+				<span class="vicon vicon-alert"></span>
+				<span>
+					<strong>Upgraded and Login not working </strong>
+				<p>Go to WP admin - Vibebp - Settings and enable Global login and WP Login sync.
+				</p>
+			</div><br>
+			<p><strong>Why this setting is not enabled by default ?</strong> We have deliberately added this switch as in version 4 WPLMS can execute entirely on a single page. Yes, you do not need to convert your entire site into an LMS. That idea is actually a limitation of WordPress that to implement afunctionality as complex as Learning management system you have to add templates and tinker with the core of WordPress into how it handles template and how it loads various pages.
+			 </p>
+			<h4> Changing the messages in the login popup</h4>
+			<p>As you as you enable this, you will be able to click on the login link in the header and it would open the new login popup. You would want to change the login screen text messages and the references to vibethemes & wplms. To change simply go to WP admin - VibeBP - Settings and you can change these messages easily</p>
+			<a href="../assets/img/global_login_messages.png" target="_blank"><img src="../assets/img/global_login_messages.png" style="width:100%" /></a>
 			<br>
-			<h3>C. Profile Layout</h3>
-			<p>The Profile layouts in WPLMS v4 are built using Elementor. In previous versions the profile pages were static hard coded templates but the v4 comes with the flexibility of </p>
+			<p>You can also customise this screen further by adding checkbox for login and registration screens.</p>
+			<div class="columns">
+				<div>
+					<p>Add login terms. A checkbox appears for users who login to your site.</p>   
+					<a href="../assets/img/login_checkbox.png" target="_blank"><img src="../assets/img/login_checkbox.png" style="width:100%" /></a>
+				</div>
+				<div>
+					<p>Add registration terms. A checkbox appears for users who want to register to your site.</p> 
+					<a href="../assets/img/register_checkbox.png" target="_blank"><img src="../assets/img/register_checkbox.png" style="width:100%" /></a>
+				</div>
+			</div>
+			<p>The registration can be further modified. You may have requirements for a bigger registration form with custom information. In that case, you can setup a registration form.</p>
+			
+			<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/czb0FYKcFME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+			<a href="https://www.youtube.com/watch?v=czb0FYKcFME&t=29s">Direct link to watch on youtube</a><br><br>
+			<h4>I want multiple registration forms, for instructors, students and more options.</h4>
+			<p>We have some fantastic options available, you can explore the custom registration forms feature. This is really a useful feature considering the options it provides. </p>
+			<ul>
+				<li>Fill information directly in profile fields</li>
+				<li>Embed Google captcha validation</li>
+				<li>Enroll the user directly in a group / batch & into the courses.</li>
+				<li>Assign a different user role for the site. So if you assign an instructor as role to anyone registering using that form. It becomes an Instructor registration form.</li>
+				<li>If you are a school or community and have multiple member type requirements, you can assign custom member type to the user registring from the form.</li>
+				<li>End output is a shortcode and that shortcode can be embedded at any place on site.</li>
+				<li>Is built in native javascript, no jquery mode, so can work asynchronously.</li>
+				<li>Assign a custom activation email template.  Different activation email per registration form.</li>
+				<li>Assign a custom welcome email template per form.</li>
+				<li>Add some styling and any custom layout is possible. Show in tabs, show in two column format,</li>
+			</ul>
+
+			<div class="videoWrapper">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/GQ_yvx1xU-I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<span>
+					<strong>Third party registration form plugins</strong>
+				<p>As this is WordPress it is totally safe to use third party registration forms. Just make sure that they fill in the buddypress fields as well.
+				</p>
+			</div>
+			<br>
+			<h3 style="font-size:2rem;">C. Profile Layout</h3>
+			<p>A Profile layout is the display of member profile. In version 4 this is no longer the same BuddyPress profile. The disadvantage in BuddyPress profiles is that they do not allow page caching. The content on the profile pages is not static, for example the activity tab changes frequently, any content which comes frmo the server dynamically can not be cached by the browser, so a hit has to be made to the server to fetch the page hence such pages will always load slow. Other reasons, firstly a public profile displaying activity can be a privacy issue, secondly we really do not understand how useful it is for a third party user viewing the profile, none of the top sites have similar structure, including the facebook. A public profile should be static, configurable and showcase what the member wants to show.</p>
+			<p>The Profile layouts in WPLMS v4 are built using Elementor. In previous versions the profile pages were static hard coded templates but the v4 comes with the flexibility of building these layouts right form your favorite page builder.</p><p>You can create multiple profile layouts and assign these layouts to various member types.</p>
+
+			
+			<div class="columns">
+				<div><div class="message info">
+				<span class="vicon vicon-info"></span>
+				<span>
+					<strong>Profile layout does not apply, still getting v3 layouts.</strong>
+				<p>Two important settings are required.</p>
+				<ul>
+					<li>Change customizer - Layouts - Profile - Blank </li>
+					<li>Toggle the switch, move to WPLMS v4.x </li>
+				</ul>
+				</span>
+			</div><a href="../assets/img/wplmsv4_toggle.png" target="_blank"><img src="../assets/img/wplmsv4_toggle.png" style="width:100%" /></a>
+				</div>
+				<a href="../assets/img/profile_layoutv4.png" target="_blank"><img src="../assets/img/profile_layoutv4.png" style="width:60%" /></a>
+			</div>
+			<p></p>
+			<p>You can create multiple layouts and by default the latest layout will apply on all the member profiles. Unless you set a member type value in the layout.</p>
+			<div class="videoWrapper">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/AYXzAMxFWCU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<p>Currently page builders supported by VibeBP & WPLMS is Elementor. Support for Divi and Oxygen builder is also planned.</p>
 			<hr>
+			<h3 style="font-size:2rem;">D. Directories</h3>
+			<p>Directories form an integral part of WPLMS. The directories are no longer cookie and ajax based. Whole of the directories are now built on reactJS.</p>
+			<p>The directories leverage browser caching a lot, the member card views are saved in the browser session, which means that when you load the same member in the browser tab, it would not make any hit to your server.</p><p>At the same time if you make changes in your directory you will not notice the change. But if you just close the browser tab and open a new tab, you will see the updated results.
+			</p>
+
+			<div class="message warning">
+				<span class="vicon vicon-alert"></span>
+				<span>
+				<strong>Elementor crashes while editing directory page
+				</strong>
+				<p>This is expected behvaior. The buddypress pages are not regular pages, hence elementor fails to detect when these pages are set as directory pages. The tick is to disconnect these pages from the directory page by going to WP admin - Settings-  BuddyPress - Pages. And then editing these pages in the elementor.</p>
+			</div>
+			<p></p>
+			<p>By default on upgrading you wil not notice any change. To make the change you will need to set the directory layout to blank</p>
+			<a href="../assets/img/profile_layoutv4.png" target="_blank"><img src="../assets/img/directory_layoutv4.png"  /></a>
+			<p>After setting this, you will need to disconnect the page from BuddyPress.WP admin - Settings-  BuddyPress - Pages, set the directory page to none and then add the Directory widget in the page. </p>
+			<p>Lets take a loook at what all changes have been made in the directories.</p>
+			<h4> The Course directory</h4>
+			<p>Lets take a look in detail</p>
+			<h4> The Members directory</h4>
+			<h4> The Groups directory</h4>
+			<h4> The Activity directory</h4>
 			<hr>
 			<h2 id="buddypress_settings">Configuring </h2>
 			<div class="columns">

@@ -15,7 +15,18 @@ body {
     font-size:14px;
     font-family: 'Mulish', sans-serif;
 }
-
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+     iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+}
 .envato-setup-content p, .envato-setup-content table {
     font-size: 1em;
     line-height: 1.75em;
@@ -105,7 +116,7 @@ img{
 }
 
 .setup_wizard_main {
-    flex: 14 0 240px !important;
+    flex: 13 0 240px !important;
     max-width:100vw;
     background: #fff;
     padding:0;

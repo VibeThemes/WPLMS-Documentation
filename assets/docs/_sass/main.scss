@@ -28,8 +28,18 @@
 .action_buttons{
     display: flex;
     align-items: center;
+    flex-wrap:wrap;
     justify-content: space-between;
-    margin: 1.5rem 0 0;
+    margin: 0.75rem 0 0;
+    & > *{
+      flex:1 0 240px;
+      margin:0.75rem 0;
+    }
+}
+@media (max-width:1077px){
+  .setup_wizard_wrapper_wrapper .setup_wizard_wrapper .onboarding{
+    position:relative;
+  }
 }
 
 @keyframes drop {
