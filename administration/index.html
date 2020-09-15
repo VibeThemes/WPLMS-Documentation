@@ -113,13 +113,13 @@
 			</div>
 			
 			<strong>Why Firebase ?</strong>
-			<p>We wanted the system to remain fast and not use server for social login integrations. For example : if 20 users use Facebook login in your site at the same time, your server ( a single cpu) would have immense amount of work to do as it would make a hit to facebook and send in credentials  validate for all 20 users. Also maintain other tasks going on in the site. A browser only system would have 20 CPU's to make the hit and only make the hit to the server for registration.</p>
+			<p>We wanted the system to remain fast and not use server for social login integrations. For example : if 20 users use Facebook login in your site at the same time, your server ( a single cpu) would have immense amount of work to do as it would make a hit to facebook and send in credentials, generate WordPress session cookie and validate for all 20 users. Also maintain other tasks going on in the site. As compared to version 4 browser only system, the WPLMS uses 20 client CPU's to make the hits and only make the single hit to the server for registration. Cookie less, Fast and secure.</p>
 			<p>
 				The server would only authenticate with firebase and firebase takes care of the rest of the integrations. 
-			 Firebase is free, it provides the gold standard on how scalable login systems should be built..</p>
+			 Firebase is free, it provides "the" gold standard on how scalable login systems should be built. Several projects not just WPLMS but many use Firebase JWT classes to generate tokens. Also firebase takes care of evolving login patterns of these social networking sites.</p>
 
  			 <img src="../assets/img/firebase_auth.png" style="width:100%" />
- 			 <p>The firebase takes care of integrating with social login without putting any stress on your server. Our server just maintains integration with firebase. The firebase requests are validated by public keys which the WPLMS site fetches from firebase every 15 minutes interval. </p>
+ 			 <p>The firebase takes care of integrating with social login without putting any stress on your server. Your server just maintains integration with firebase. The firebase requests are validated by public keys which the WPLMS site fetches from firebase every 15 minutes interval. So this is as secure as it can be.</p>
 			<strong>I liked v3 Login, can i revert ? Can I use third party plugin like Digits ?</strong>
 			<p>We get this question a lot. Even though you lose out on tons of great options and sacrifice a lot on speed and even though I strongly recommend against this. Yes, you can still use old login system with WP login sync enabled in the WP admin - Vibebp - settings.</p>
 			<div class="message warning">
@@ -129,7 +129,7 @@
 				<p>Go to WP admin - Vibebp - Settings and enable Global login and WP Login sync.
 				</p>
 			</div><br>
-			<p><strong>Why this setting is not enabled by default ?</strong> We have deliberately added this switch as in version 4 WPLMS can execute entirely on a single page. Yes, you do not need to convert your entire site into an LMS. That idea is actually a limitation of WordPress that to implement afunctionality as complex as Learning management system you have to add templates and tinker with the core of WordPress into how it handles template and how it loads various pages.
+			<p><strong>Why this setting is not enabled by default ?</strong> We have deliberately added this switch as in version 4 WPLMS can execute entirely on a single page. Yes, you do not need to convert your entire site into an LMS. That idea is actually a limitation of WordPress that to implement afunctionality as complex as Learning management system you have to add templates and implement functionality based on how WordPress functions. The WordPress lifted this with their HeadLess CMS concept.
 			 </p>
 			<h4> Changing the messages in the login popup</h4>
 			<p>As you as you enable this, you will be able to click on the login link in the header and it would open the new login popup. You would want to change the login screen text messages and the references to vibethemes & wplms. To change simply go to WP admin - VibeBP - Settings and you can change these messages easily</p>
@@ -226,12 +226,47 @@
 				<span>
 				<strong>Directory is blank
 				</strong>
-				<p>This is expected behvaior. The buddypress pages are not regular pages, hence elementor fails to detect when these pages are set as directory pages. The tick is to disconnect these pages from the directory page by going to WP admin - Settings-  BuddyPress - Pages. And then editing these pages in the elementor.</p>
+				<p>Refresh the BuddyPress cache : Go to WP admin - Settings-  BuddyPRess - Save components.</p>
+			</div>
+			<p></p>
+			<p>Let us see what all has changed in the version 4 implementation of following.</p>
+			<h4> The Course directory</h4>
+			<p>In all previous versions the Course directory followed the BuddyPress templating system, it stored cookies for retaining data and sent those cookies in the requests to filter out searches and sorting. The problem with this approach is that it is slow and we are not at all using the Browser here for doing the complex jobs.</p><p>The version 4 implementation removes a lot of these barriers, to provide a much faster and flexible way of doing things.</p><p>To create any page a course directory simply edit the page with Elementor and drag the course directory Elementor widget.</p>
+			<a href="../assets/img/directory.png" target="_blank"><img src="../assets/img/directory.png" style="width:100%" /></a>
+			 <p>After that you just need to configure the widget.</p>
+			<strong>Two most improtant settings in this widget is Coruse block minimum width and number of course blocks to show in the directory in 1 page.</strong>
+			<p>You can add following filters in the course directory widget. </p>
+			
+			<div class="columns">
+			<ul>
+				<li>Course Category</li>
+				<li>Course Levels</li>
+				<li>Course Locations</li>
+				<li>Any other taxonomy related to Courses will be automatically detected in the course directoryelementor widget</li>
+				<li>Instructors Filter, filter results by registered instructors in your site</li>
+				<li>Price filter, currently it supports Paid / Free, but in coming update, it will support range selection.</li>
+				<li>Course Duration, the maximum total duration of the course</li>
+				<li>Total number of students enrolled in the course</li>
+				<li>Course Start date, select by range</li>
+				<li>Course Seats : Maximum students allowed in the course</li>
+				<li>Badge Percentage : score students need to gain a badge in the course</li>
+				<li>Completion Certificate : If student will get a certificate of completion or not.</li>
+				<li>Passing Percentage : The passing score that you set for certificate of completion or not.</li>
+				<li>Drip Feed : Wheather drip feed is enabled or nor for the course</li>
+				<li>Course Retakes : IF the user can retake the course</li>
+				<li> Any other setting which adds additional information would automatically appear in the widget. For example : Batch enrollment would automatically appear if it is enabled in the batches addon. So using this filter would show all courses which require the user to enroll in a batch. Many other settings from the addons would automatically appear here.</li>
+				<li><strong>Card Style</strong> This is the appearance</li>
+			</ul>
+			<span><a href="../assets/img/course_directory_widget.png" target="_blank"><img src="../assets/img/course_directory_widget.png" style="width:100%" /></a>
+				<p style="opacity:0.8">The loading icon is expected as this is a react tempalte and elementor does not provide all data to our template. This is a temporary issue while we find a way to resolve this. You can simply click on the menu icon on top right of your elementor edit screen and click on "view the page" in a new tab. Now you can make the changes in the widget and see those changes in the new tab.</p><p><strong>Note</strong> while making changes if you are changing the card style, you may have to open the directory page again as the browser caches the course block views and changing block view in elementor will not seem to impact the view in the directory.</p>
+				</span>
 			</div>
 
-			<h4> The Course directory</h4>
-			<p>Lets take a look in detail</p>
+			<p>There is no longer any restriction to keep 1 directory page, you can create multiple directory pages for courses or even prepare your page in elementor and embed the directory widget in the page</p>
+
 			<h4> The Members directory</h4>
+			<p>The buddypress members directory . You can create unlimited members directory by simply pacing the members directory widget. The members directory widget also supports Member Types. </p>
+			<strong>Member types</strong><p></p>
 			<h4> The Groups directory</h4>
 			<h4> The Activity directory</h4>
 			<hr>
