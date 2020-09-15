@@ -116,7 +116,7 @@
 			<p>We wanted the system to remain fast and not use server for social login integrations. For example : if 20 users use Facebook login in your site at the same time, your server ( a single cpu) would have immense amount of work to do as it would make a hit to facebook and send in credentials  validate for all 20 users. Also maintain other tasks going on in the site. A browser only system would have 20 CPU's to make the hit and only make the hit to the server for registration.</p>
 			<p>
 				The server would only authenticate with firebase and firebase takes care of the rest of the integrations. 
-			 Firebase is free, it provides the gold standard on how scalable login systems should be built. Now, when building a login system it is going to be pain point and a vulnerability here means we are sacricing overall security of the platform. Hence, we brought in firebase.</p>
+			 Firebase is free, it provides the gold standard on how scalable login systems should be built..</p>
 
  			 <img src="../assets/img/firebase_auth.png" style="width:100%" />
  			 <p>The firebase takes care of integrating with social login without putting any stress on your server. Our server just maintains integration with firebase. The firebase requests are validated by public keys which the WPLMS site fetches from firebase every 15 minutes interval. </p>
@@ -207,7 +207,7 @@
 			<p>Directories form an integral part of WPLMS. The directories are no longer cookie and ajax based. Whole of the directories are now built on reactJS.</p>
 			<p>The directories leverage browser caching a lot, the member card views are saved in the browser session, which means that when you load the same member in the browser tab, it would not make any hit to your server.</p><p>At the same time if you make changes in your directory you will not notice the change. But if you just close the browser tab and open a new tab, you will see the updated results.
 			</p>
-
+			<p>See below notice on how to edit directory pages</p>
 			<div class="message warning">
 				<span class="vicon vicon-alert"></span>
 				<span>
@@ -217,9 +217,18 @@
 			</div>
 			<p></p>
 			<p>By default on upgrading you wil not notice any change. To make the change you will need to set the directory layout to blank</p>
-			<a href="../assets/img/profile_layoutv4.png" target="_blank"><img src="../assets/img/directory_layoutv4.png"  /></a>
+			<a href="../assets/img/directory_layoutv4.png" target="_blank"><img src="../assets/img/directory_layoutv4.png"  /></a>
 			<p>After setting this, you will need to disconnect the page from BuddyPress.WP admin - Settings-  BuddyPress - Pages, set the directory page to none and then add the Directory widget in the page. </p>
 			<p>Lets take a loook at what all changes have been made in the directories.</p>
+
+			<div class="message warning">
+				<span class="vicon vicon-alert"></span>
+				<span>
+				<strong>Directory is blank
+				</strong>
+				<p>This is expected behvaior. The buddypress pages are not regular pages, hence elementor fails to detect when these pages are set as directory pages. The tick is to disconnect these pages from the directory page by going to WP admin - Settings-  BuddyPress - Pages. And then editing these pages in the elementor.</p>
+			</div>
+
 			<h4> The Course directory</h4>
 			<p>Lets take a look in detail</p>
 			<h4> The Members directory</h4>
