@@ -5,7 +5,6 @@ name: Publish Documentation
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the v4 branch
 on: push
-name: Publish Website
 jobs:
   FTP-Deploy-Action:
     name: FTP-Deploy-Action
