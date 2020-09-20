@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WPLMS v 4 Administrators Guide - Registrations and Logins</title>			
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/docs.css?2" media="all">
+<link rel="stylesheet" href="../assets/vicons.css" media="all">
+</head>
+<body>
+<span class="loader"><span></span></span>
+<div class="setup_wizard_wrapper_wrapper">
+	<div class="setup_wizard_wrapper">
+	<div class="onboarding introduction">
+		<div class="onboarding_header">
+			<span>
+				<img id="wplms_logo" class="site-logo" src="http://localhost/wplms/wp-content/themes/wplms/assets/images/logo.png" alt="wplms">
+				<span>The WordPress LMS</span>
+			</span>
+		</div>				
+		<div class="onboarding_introduction">
+			<h2>Administration Guide</h2>
+			<br>
+			<span>WPLMS version 4.</span>
+			<ul>
+				<li><a href="index.html">Setting Up WPLMS v4</a></li>
+				<li class="active"><a href="registrations.html">Registration & Logins</a><span class="vicon vicon-arrow-right"></span></li>
+				<li><a href="existing.html">Instructors & Commissions</a></li>
+				<li><a href="existing.html">Extending & Addons</a></li>
+				<li><a href="existing.html">Translation Guide</a></li>
+				<li><a href="faq.html">FAQs</a></li>
+			</ul>
+		</div>
+		<a href="../index.html">&lsaquo; Back to main</a>
+	</div>
+	<div class="setup_wizard_main" >
+		<div class="setup_wizard_main_header">
+			<span></span>
+			<span>Having Troubles ? <a href="https://wplms.io/support">Get Help</a></span>
+		</div>
+		<div class="envato-setup-content">				
+			<h1>Registrations and Login Guide for WPLMS Administrators.</h1>
+			<p>This we will understand how logins and registrations work in the latest WPLMS verison 4.</p>
+			
+			<hr>
+			<h2 id="jwt_login">The JWT Login</h2>
+			<div class="columns">
+				<div>
+					<p>The WPLMS Version 4 login is modern login system based on JWT, JSON web Token, which is the modern web standard for login systems. Almost all modern sites use it. Unfortunately, WordPress still works with Cookie and session based login systems which are more than a decade old.</p>
+					<p><strong>VibeBP Login</strong>The login system the WPLMS v4 uses is powered by the VibeBP plugin. </p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login" class="active">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p></p>
+			<div class="columns">
+				<div>
+					<p>The backbone of the WPLMS v4 is the VibeBP framework. The WPLMS Plugin it self is an addon to the VibeBP framework.</p>
+					<p>The same login system is used in the WPLMS v4 mobile apps. So it is really powerful cross platform login system. Also the exportable courses feature of version 4 (not yet launched) the user will be able to authenticate using this login system and pursue courses remotely even where there is no internet. This happens because the JWT is a browser centric login system.</p>
+					
+				</div>
+				<div>
+					<strong>Can I use the verison 3 login system ?</strong>
+					<p>Yes you can use the verison 3 login. Which is the default WordPress login. The only setting you need to enable in WP admin - vibebp - Settings - WP Login sync. To keep everything in version 4 and only the login form to wplms v3, you will need to copy your header template file from the version 3 and place it in the child theme. </p>
+					<p>For example : You are using Demo10, which uses the transparent header, then copy header-transparent.php from the WPLMS v3 and place it in your child theme : wp-content/themes/wplmsblankchildtheme</p>
+				</div>
+			</div>
+			
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<p>To change login screen messages and registration messages <a href="index.html#change_login_messages">Click here &rsaquo;</a></p>
+			</div>
+			
+			<p></p>
+			<p>There are few key settings for this login system which are located in the WP admin - Vibebp - Settings - General tab.</p>
+			<div class="columns">
+				<div>
+					<ul>
+						<li><strong>Client Id</strong> This is a security key of sorts and it is a necessary field which must always have a value. Some of the API's by default are public in nature like the Login, Directories API, Course , Members directories etc. You can  periodically changing this value the bots can not use the API's. When you change this value make sure you clear out all the server cache and if using service worker change the version and re-generate it.</li>
+						<li><strong>Synchronise WP with VibeBP login</strong> Currently this is a one way sync, user logged into WP will automatically get logged into VibeBP. The reverse is also possible but we lose out on advantage of the JWT login if we log the user into WordPress.</li>
+						<li><strong>VibeBP Logout redirect</strong> You can set a landing page where the user lands when he logs out, Totally optional.</li>
+						<li><strong>Token Duration</strong> This is the duration of the logged in session of a user. The user login status is determined by the Token and token is stored in the browser and you can set how long the token duration is valid. Now, although JWT tokens are secure as they are saved in the browser, you can increase of decrease this value, the user will be required to re-login when the duration ends. We recommend setting this value to 1 week.</li>
+					</ul>
+				</div>
+				<div>
+					<a href="../assets/img/vibebp_login_settings.png" target="_blank"><img src="../assets/img/vibebp_login_settings.png" style="width:100%" /></a>
+				</div>
+			</div>
+			<strong></strong><p>When you login to VibeBP , the token is evalutaed and expanded. The explanded token contains all information about the logged in user the same information contained in the WordPress current user object. Which means we are storing WP user roles and capabilities. </p>
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<p><strong>Dev note</strong> You can customise this information of the JWT token as well via code. However we only detect 3 capability : Manage_options , edit_users, and read. This is to keep the token size small as it is sent in every request.</p>
+			</div>
+			<hr>
+			<h2 id="default_registration">Default Registration</h2>
+			<div class="columns">
+				<div>
+					<p>To keep the registraion process simple, WPLMS comes with an inbuilt registration which is the email and the password.</p>
+					<p>Although creating a complex registration form is perfectly valid and we have options to add those as explained below.</p>
+					<p>If you want to add custom fields in the default registration form then it is possible by some code.</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration"  class="active">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p></p>
+			<p>As an example we have already extended this registration using our WPLMS Phone authentication addon [$19, supports free 50 sms/minute via firebase].</p>
+			<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/dnSJGxpwSrA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+				<a href="https://www.youtube.com/watch?v=dnSJGxpwSrA">Direct link to watch on youtube</a><br>
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<p>To enable registration make sure you have enabled the registration option in WP admin - Settings - General.</p>
+				<a href="../assets/img/enable_registstration.png" target="_blank"><img src="../assets/img/enable_registstration.png" style="width:100%" /></a>
+			</div>
+			<p></p>
+			<div class="columns">
+				<div>To translate or change the registration screen, simply open WP admin - Vibebp - Settings - General and translate the strings.
+				<a href="../assets/img/register_vibebp.png" target="_blank"><img src="../assets/img/register_vibebp.png" style="width:100%" /></a></div>
+				<div>
+					<a href="../assets/img/registration_strings.png" target="_blank"><img src="../assets/img/registration_strings.png" style="width:100%" /></a>
+				</div>
+			</div>
+			<p></p>
+			<p>The fonts and the style that get applied on the default login and registration is taken from what is applied on the Log-in Trigger. So if you add a text upper case on the Login trigger, it gets applied on all of the login and registration popup as visible in above screenshot.</p>
+			<p>On registration the buddypress would send an activation email and the user will need to click on a link to ativate his account. On account activation the user is logged into the wordpress.</p>
+			<p>See video walk through : </p>
+
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<p>The activation redirect setting in WP admin - WPLMS - BuddyPress. Would reirect the user to a page on registration confirmation. Ensure this is not set back to the register or activation page or any page inaccessible to a loggedin user. This login happens in the WP, so ensure WP Vibebp Login sync is enabled.</p>
+				<a href="../assets/img/activation_redirect.png" target="_blank"><img src="../assets/img/activation_redirect.png" style="width:100%" /></a>
+			</div>
+			<p></p>
+			<h4>The Social logins</h4>
+			<p>If any user attemps to login via social login theit accounts are automatically created without any need for verification.</p>
+			<p><strong>The social logins are integrated with Firebase. See below video on how to configure these.</strong></p>
+			
+			<div class="videoWrapper">
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/0h3oECa2JMg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<hr>
+			<h2 id="buddypress_registration">BuddyPress Registration</h2>
+			<div class="columns">
+				<div>
+					<p>Another alternative to use is the buddypress rregistration form. This form is generated by the BuddyPress automatically and it appears only on the registration page. So you can only have 1 version of this form.</p><p>This registration page is the page that you set in WP admin - Settings-  BuddyPress  - pages - register</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration"  class="active">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p></p>
+			<p>This page has been same for WPLMS version 3 and version 4 as it is generated by BuddyPress. This page is built up of profile fields that are defined in the WP admin - users - profile fields section.</p><p>In this section you can customise the profile fields into various groups, you can create groups, add or remove fields.</p><p>The BuddyPress would automatically pickup fields from the Primary profile field group and show in the registration form.</p>
+			<p>The one most important field in this whole form is the "Name". This fields get pre-built on BuddyPress installation and it is labelled as "primary" inside a primary field group.</p>
+			<div class="message warning">
+				<span class="vicon vicon-info"></span>
+				<p>You must always ensure that you have a "Primary" field group and a "Primary" field in the primary field group for the default registration form to work.</p>
+				<a href="../assets/img/buddypres_sprimary_field.png" target="_blank"><img src="../assets/img/buddypres_sprimary_field.png" style="width:100%" /></a>
+			</div>
+			<p></p>
+			<p>On registration the buddypress would send an activation email.</p>
+			<hr>
+			<h2 id="woocommerce_registration">WooCommerce Registration</h2>
+			<hr>
+			<h2 id="custom_registration">Custom Registration Forms</h2>
+
+				<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/czb0FYKcFME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+				<a href="https://www.youtube.com/watch?v=czb0FYKcFME&t=29s">Direct link to watch on youtube</a><br>
+			<hr>
+			<h2 id="emails">Emails</h2>
+			<hr>
+			<h2 id="troubleshooting_emails">TroubleShooting Emails</h2>
+			<hr>
+			<h2 id="faqs">FAQs</h2>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
