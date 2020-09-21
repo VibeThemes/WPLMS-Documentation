@@ -191,6 +191,8 @@
 			
 			<p></p>
 			<a href="../assets/img/buddypres_sprimary_field.png" target="_blank"><img src="../assets/img/buddypres_sprimary_field.png" style="width:100%" /></a>
+
+			<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/kTyHuphnJrE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 			<hr>
 			<h2 id="woocommerce_registration">WooCommerce Registration</h2>
 
@@ -226,15 +228,181 @@
 			<hr>
 			<h2 id="custom_registration">Custom Registration Forms</h2>
 
+			<div class="columns">
+				<div>
+					<p>WPLMS has Custom Registration forms functionality. Where in you can create unlimited registration forms using the same BuddyPress fields.</p><p>Even if the global registration is off in WP admin - Settings - anyone can register, the custom registration forms will still work and use the BuddyPress email and activation system.</p><p>Custom registration forms has many actions and use cases. It is one of the most useful functinalitites which you can use to register into BuddyPress. As it uses BuddyPress fields, users registering using this form are actually filing up details in their profiles</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration"  class="active">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+
+			<h4>Custom Registration forms use cases</h4>
+			<ol>
+				<li>Instructor registration form</li>
+				<li>Student registration form</li>
+				<li>Registration form for any Custom member type classification.</li>
+				<li>Registration form to enroll into a Batch / Class / Department</li>
+				<li>Registration form by passing activation emails and directly logging in.</li>
+				<li>Registration form for manually approving candidates.</li>
+				<li>Registration form for Batch, enroll into Bulk courses simultaneously.</li>
+				<li>Sending custom activation mail to registration form.</li>
+				<li>Post account activation sending custom welcome mail to users registering from a registration form.</li>
+			</ol>
+			<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/GQ_yvx1xU-I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+			<p></p>
 				<div class="videoWrapper"><iframe width="560" height="315" src="https://www.youtube.com/embed/czb0FYKcFME" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 				<a href="https://www.youtube.com/watch?v=czb0FYKcFME&t=29s">Direct link to watch on youtube</a><br>
 
 			<hr>
 			<h2 id="emails">Emails</h2>
+			<div class="columns">
+				<div>
+					<p>WPLMS uses the BuddyPress email system which runs on Templates. You can customise email templates in your language easily form the WP admin - Emails section. You can also change the design of these email templates from the WP admin - Emails - Customise seciton.</p><p>However, to add new template this is only possible programmatically.</p>
+					<p>The email system works on situations and tempaltes. So when a situation occurs the email template connected to the situation is sent.</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails"  class="active">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p>To view all Email templates, simply check the WP admin - Emails section. Every email will consist of text and tokens. The tokens are wrapper in double curly braces : {{token}} or triple curly braces {{{ token }}}. Triple  curly braces are links with variables, where as double are simply variables. 
+			</p>
+			<a href="../assets/img/emails_tokens.png" target="_blank"><img src="../assets/img/emails_tokens.png" style="width:100%" /></a>
+			<p>You can change all the text but you need to keep the tokens as it is unless you want to remove information from the email itself.</p>
+			<p>Adding more tokens is only possible programatically and we can help you in that, you can request a paid customisation at <a href="https://wplms.io/support">wplms.io/support</a> for this.</p>
+			<a href="../assets/img/processed_mail.png" target="_blank"><img src="../assets/img/processed_mail.png" style="width:100%" /></a>
+			<p>WPLMS extensively uses the BP Email system to send out emails.</p>
+			<p>Default BuddyPress comes with 15 email template and WPLMS registers around 60 email templates for various actions and hooks.</p>
+
+		
+			<h3>The Email Options</h3>
+			<div class="columns">
+				<div>
+				<p>Located WP admin - LMS - Settings - Emails, you can set some key options like. In the emails sent to users "From" field can be modified here. And From Name can also be set here. </p>
+				<p>You can also enable Welcome emails. That is the email sent to the user post account activation.</p>
+				<a href="https://wplms.io/support/knowledge-base/welcome-emails/" target="_blank">Welcome emails document</a>
+				</div>
+				<div>
+					<a href="../assets/img/email_settings.png" target="_blank"><img src="../assets/img/email_settings.png" style="width:100%" /></a>
+				</div>
+			</div>
+
+			<h3>The Email Schedule</h3>
+			<p>Here you can specify schedule for emails to notify the users about upcoming events.</p>
+			<div class="columns">
+				<ol>
+					<li>Drip Feed email, send user reminder about his upcoming lesson in a drip feed enabled course</li>
+					<li>Course Expiry email, send user reminder about his course accessibility duration ending soon.</li>
+					<li>Inactive USer Email, send reminder that the user has not logged into the site for X days. You can set more options to this email. </li>
+					<li>Course review email, send reminder to user for reviewing a course after they have finished the course.</li>
+				</ol>
+				<div>
+					<a href="../assets/img/schedule_Emails.png" target="_blank"><img src="../assets/img/schedule_Emails.png" style="width:100%" /></a>
+				</div>
+			</div>
+
+			<h3>The Scheduled Email</h3>
+			<p>This contains list of emails which are scheduled to be send to different users in your site. You can remove the scheduled emails as well.</p><p>This is important in miscellaneous cases, for example a user who purchased the course applied for a refund, so he should not get a course epxiry email, you can confirm and remove that email from here in case it is not automatically removed.</p>
 			<hr>
 			<h2 id="troubleshooting_emails">TroubleShooting Emails</h2>
+			<div class="columns">
+				<div>
+					<p>Emails is a core functionality of WPLMS.</p><p>However, thre are many reasons the emails do not work as expecteds.</p>
+					<p>Lets see how we can identify the problem and make this work.</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails"  class="active">TroubleShooting Emails</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p>The issue with emails is that it is being sent from the server where your website is hosted. So a lot of the issues may not not be connected to the WPLMS.</p>
+			<div class="message info">
+				<span class="vicon vicon-info"></span>
+				<p>Emails not sending, make sure you are using BuddyPRess 6.3.0+ not 6.2.0.</p>
+			</div>
+			<p></p>
+			<h4>Step 1 : Is the email which has to be sent registered in WPLMS ?</h4>
+			<p>You can simply check if the which should be send is registerd in the WP admin - Emails section. If you find that the email is not registered then you can register it by :</p>
+			<ol>
+				<li> Resetting BuddyPress emails, if the email is a BuddyPress email<img src="../assets/img/reset_bpemails.png" style="width:100%" /></li>
+				<li> Resetting WPLMS emails, if the email is a WPLMS email <a href="https://wplms.io/support/knowledge-base/migrate-all-the-wplms-emails-to-buddypress-again/">link</a></li>
+			</ol>
+			<p></p>
+			<h4>Step 2 : For signup emails, check if the user was recorded in USer - Signups ?</h4>
+			<p>In case of signup emails we can track if the email sending was actually attempted, for this you can locate te WP Admin - USers - Pending signups section. </p>
+			<p></p>
+			<h4>Step 3 : Are emails working in your WordPress site ?</h4>
+			<p>Check if the Emails are working. You can test this by going to WP admin - Users Add new. And register a sample user to one of your email ids. While registering the user ensure you check the "Send email" and verify if you get an email on the email id.</p>
+			<img src="../assets/img/wp_mail.png" style="width:100%"  />
+			<p>If emails are not working still, this is not confirmed that the error exists in your server SMTP. You can chose the Alternative step4 or move to step5 to debug the server.</p>
+			
+			<p></p>
+			<h4>Step 5 : Checking server logs</h4>
+			<p>If you are not comfortable with solution at point 4. Then you can try to debug why your server is not sending emails. For this you need to login to the WHM or cPANEL and look for mail delivery reports.</p> 
+				<img src="../assets/img/email_delivery.png" style="width:100%"   />
+			<p>Here you can see the exact reason why the email was not sent to the user.</p>
+			<p>Or login via SSH of your server and locate the "exim" file and locate the issues in the email.</p>
+			<p></p>
+			<h4>Step 6 : Emails landing in Spam</h4>
+			<p>This is a very common issue with BuddyPress emails. There are many reasons for this, from blacklisting to reputation of the hosting company, to incorrect SPF, DKIM, reverse DNS and PTR records. </p>
+			<p>You can register to the Gogle Postmaster tools : <a href="https://postmaster.google.com" target="_blank">https://postmaster.google.com/</a> and track various factors contributing to your emails landing up in spam.</p>
 			<hr>
 			<h2 id="faqs">FAQs</h2>
+			<div class="columns">
+				<div>
+					<p>Common FAQ's and solutions available to known issues.</p>
+					<p>Lets see how we can identify the problem and make this work.</p>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#jwt_login">JWT Login</a></li>
+						<li><a href="#default_registration">Default Registration</a></li>
+						<li><a href="#buddypress_registration">BuddyPress Registration</a></li>
+						<li><a href="#woocommerce_registration">WooCommerce Registration</a></li>
+						<li><a href="#custom_registration">Custom Registration Forms</a></li>
+						<li><a href="#emails">Emails</a></li>
+						<li><a href="#troubleshooting_emails">TroubleShooting Emails</a></li>
+						<li><a href="#faqs" class="active">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<div class="accordions_wrapper">
+				<div class="accordion">
+					<input type="checkbox" id="faq001" />
+					<label for="faq001">
+						No emails being sent in BuddyPress 6.4<span></span>
+					</label>
+					<div class="description">
+						<p>There is a known bug in BuddyPress version 6.2.0 with WP 5.5 or more. Please make sure your BuddyPress version is 6.3.0 or more for WP  5.5 setips/</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
