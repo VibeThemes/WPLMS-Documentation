@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>WPLMS v 4 Introduction</title>			
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;700;900&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/docs.css?2" media="all">
+<link rel="stylesheet" href="../assets/vicons.css" media="all">
+</head>
+<body>
+<span class="loader"><span></span></span>
+<div class="setup_wizard_wrapper_wrapper">
+	<div class="setup_wizard_wrapper">
+	<div class="onboarding introduction">
+		<div class="onboarding_header">
+			<span>
+				<img id="wplms_logo" class="site-logo" src="http://localhost/wplms/wp-content/themes/wplms/assets/images/logo.png" alt="wplms">
+				<span>The WordPress LMS</span>
+			</span>
+		</div>				
+		<div class="onboarding_introduction">
+			<h2>Administration Guide</h2>
+			<br>
+			<span>WPLMS version 4.</span>
+			<ul>
+				<li><a href="index.html">Setting Up WPLMS v4 </a></li>
+				<li><a href="registrations.html">Registration & Logins</a></li>
+				<li><a href="existing.html">Instructors & Commissions</a></li>
+				<li><a href="addons.html">Extending & Addons</a></li>
+				<li><a href="translation.html">Translation Guide</a></li>
+				<li class="active">FAQs<span class="vicon vicon-arrow-right"></span></li>
+			</ul>
+		</div>
+		<a href="../index.html">&lsaquo; Back to main</a>
+	</div>
+	<div class="setup_wizard_main" >
+		<div class="setup_wizard_main_header">
+			<span></span>
+			<span>Having Troubles ? <a href="https://wplms.io/support">Get Help</a></span>
+		</div>
+		<div class="envato-setup-content">		
+			<h1>WPLMS Management for Administrators FAQs.</h1>
+			<p>Frequenty Asked questions and how to Correct them.</p>
+			
+			<hr>
+			<h2 id="find_settings">How to find settings ?</h2>
+			<div class="columns">
+				<div>
+					<p>80% of the support requests for WPLMS land up because of settings. We get this feedback that there are a lot of settings. The settings are there because they offer customisability  <strong>More flexibility, more settings, more chances of conflicts</strong> </p>
+					<p>Here's how you can find any setting in WPLMS :</p>
+					<ul>
+						<li><strong>Design & Templates</strong> <span style="background:#feffb5"> WPLMS Theme Options panel</span></li>
+						<li><strong>Colors & Fonts</strong> <span style="background:#feffb5">  Theme Customizer panel</span></li>
+						<li><strong>LMS Related Settings & Customisation options</strong> <span style="background:#feffb5">  WP Admin - LMS - Settings</span></li>
+						<li><strong>BuddyPress PWA & App related settings</strong> <span style="background:#feffb5"> WP admin - VibeBP - Settings</span></li>
+						<li><strong>Orders Checkout/Cart/Currency related settings</strong> <span style="background:#feffb5"> WP admin - WooCommerce - Settings</span></li>
+					</ul>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#find_settings" class="active">How to find settings ?</a></li>
+						<li><a href="#inconsitencies">Steps to fix inconsistent issues</a></li>
+						<li><a href="#uploading">Profile & Loggedin Menu</a></li>
+						<li><a href="#setup_wizard">BuddyPress Refresh Navigation</a></li>
+						<li><a href="#authenticate"></a></li>
+						<li><a href="#plugins">Configuring Emails</a></li>
+						<li><a href="#required_pages">WooCommerce</a></li>
+						<li><a href="#sample_data">Service Workers & Background Sync</a></li>
+						<li><a href="#video">PWA & Converting into App</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<hr>
+			<h2 id="inconsitencies">Steps to fix inconsitencies issues</h2>
+			<div class="columns">
+				<div>
+					<p>Inconsistent issues are those issues which appear for certain usecases only. You can apply below steps to rule out if the issue you are facing is an inconistent issue as it does not have any impact on your site.<p>
+					<p>Here are a list (not exhaustive) of inconsistent issues which may appear and does not have a proper explanation of why they appear.</p>
+					<ul>
+						<li>For administrator user it works and other users it does not work.</li>
+						<li>BuddyPress components stop working, groups does not create, messages, notifications stop working.</li>
+						<li>PWA pages turn white or crash.</li>
+						<li>Clicking on a button does not show anything happening.</li>
+						<li>Opening site home page crashes.</li>
+						<li>Site pages start showing 404 error.</li>
+					</ul>
+				</div>
+				<div class="reference_menu">
+					<ol class="main_list">
+						<li><a href="#find_settings">How to find settings ?</a></li>
+						<li><a href="#buddypress_settings"  class="active">Steps to fix inconsistent issues</a></li>
+						<li><a href="#uploading">Profile & Loggedin Menu</a></li>
+						<li><a href="#setup_wizard">BuddyPress Refresh Navigation</a></li>
+						<li><a href="#authenticate"></a></li>
+						<li><a href="#plugins">Configuring Emails</a></li>
+						<li><a href="#required_pages">WooCommerce</a></li>
+						<li><a href="#sample_data">Service Workers & Background Sync</a></li>
+						<li><a href="#video">PWA & Converting into App</a></li>
+						<li><a href="#faqs">FAQs</a></li>
+					</ol>
+				</div>
+			</div>
+			<p></p>
+			<p>There is an explanation for why these inconsistent issues appear and that is most definitely "Cache". A cache is a buffer which records and stores actions that happen in your site to improve the performance. But sometimes it starts conflicting becuase you need a fresh action to occur but the cache keeps showing you a stored action. So the below steps help in clearing these caches. </p>
+			<ol>
+				<li><strong style="background:#feffb5">Permalinks</strong> To clear this cache, go to WP admin - Settings - Permalinks and Save the permalinks. MAke sure the permalinks is set to <span style="background:#feffb5">%postname%</span>. Typical use cases : Site pages stop opening, all pages open to 404 or home page.</li>
+				<li><strong style="background:#feffb5">BuddyPress Pages</strong> Go to WP admin - Settings - BuddyPress - Pages and make sure the registrered components have pages associated with them. Typical use cases : Groups not creating, Message replies not sending, emails not working.</li>
+				<li><strong style="background:#feffb5"></strong></li>
+				<li><strong style="background:#feffb5"></strong></li>
+				<li><strong style="background:#feffb5"></strong></li>
+			</ol>
+		</div>
+	</div>
+	</div>
+</div>
+</body>
+</html>
